@@ -4,7 +4,6 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
 require('jquery')
-require("stylesheet/application.scss")
 import "bootstrap"
 import '@fortawesome/fontawesome-free/css/all'
 
