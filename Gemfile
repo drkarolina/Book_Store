@@ -4,7 +4,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.2'
 
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'erubis'
+gem 'haml'
 gem 'haml-rails', '~> 2.1'
+gem 'html2haml', require: false
 gem 'jbuilder', '~> 2.7'
 gem 'pg', '~> 1.4', '>= 1.4.3'
 gem 'puma', '~> 5.0'
