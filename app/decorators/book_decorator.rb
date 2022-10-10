@@ -8,4 +8,8 @@ class BookDecorator < Draper::Decorator
   def price_in_euro
     "€#{object.price}"
   end
+
+  def dimensions
+    "H: #{object.height}\" x W: #{object.width}\" x D: #{object.depth}"
+  end
 end
