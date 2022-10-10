@@ -4,5 +4,4 @@
   .mb-res-50
     %p
       = t('.introduction')
-  %button.btn.btn-default
-    = t('.button.get_started')
+  = link_to t('.button.get_started'), books_path, class: 'button btn btn-default'
