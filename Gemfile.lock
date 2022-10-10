@@ -106,6 +106,7 @@ GEM
     fasterer (0.10.0)
       colorize (~> 0.7)
       ruby_parser (>= 3.19.1)
+    ffaker (2.21.0)
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -330,6 +331,7 @@ DEPENDENCIES
   database_consistency
   erubis
   fasterer (~> 0.10.0)
+  ffaker
   haml
   haml-rails (~> 2.1)
   html2haml
