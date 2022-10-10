@@ -19,13 +19,13 @@
     %a.filter-link{href: "#"}
       All
       %span.badge.general-badge 
-      = @books.count
+        = @books.count
   - @categories.each do |category| 
     %li.mr-35
       %a.filter-link{href: "#"}
         = category.name
         %span.badge.general-badge 
-        = category.books.count
+          = category.books.count
 .dropdowns.mb-25.visible-xs
 %p.lead.small.mb-10 Filter by category
 .dropdown
@@ -73,7 +73,7 @@
           %p.title
             = book.title
           %p.font-16.in-gold-500
-            = book.price.to_s + '€'
+            = book.price_string
           %span.divider-sm
           %p.lead.small
             = book.authors_string 
