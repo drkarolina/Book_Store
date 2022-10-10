@@ -5,6 +5,7 @@ ruby '3.0.2'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'bootstrap'
+gem 'draper'
 gem 'erubis'
 gem 'haml'
 gem 'haml-rails', '~> 2.1'
