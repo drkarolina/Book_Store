@@ -29,7 +29,7 @@ if Book.count.zero?
     height: FFaker::Number.decimal,
     width: FFaker::Number.decimal,
     depth: FFaker::Number.decimal,
-    matiriales: FFaker::Lorem.word,
+    materials: FFaker::Lorem.word,
     category_id: rand(1..Category.count),
     authors: [authors.sample, authors.sample]
   )
