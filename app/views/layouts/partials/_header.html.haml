@@ -23,7 +23,7 @@
           %li
             %a{type: "button", 'data-toggle': "collapse", href: "#menu", 'aria-expanded': "false", 'aria-controls': "menu"}= t'.shop'
             %ul#menu.collapse.list-unstyled.pl-30.mb-10{'aria-expanded': "false"}
-              - @categories.each do |category|
+              - Category.all.each do |category|
                 %li
                   =link_to category.name, books_path(category_id: category.id)
           %li
@@ -35,7 +35,7 @@
           %li.dropdown
             %a.shop_link.dropdown-toggle{href: "#", 'data-toggle': "dropdown", role: "button", 'aria-haspopup': "true", 'aria-expanded': "false"}= t'.shop'
             %ul.dropdown-menu
-              - @categories.each do |category|
+              - Category.all.each do |category|
                 %li
                   =link_to category.name, books_path(category_id: category.id)
               %li.divider{role: "separator"}
