@@ -17,7 +17,8 @@
       = @book.authors_full_name
     .row
       .col-xs-12.col-md-4
-        %p.h1.in-gold-500.mt-10.total_price{ data: {price: @book.price}}
+        %p.h1.in-gold-500.mt-10.total_price{ data: {price: @book.price}} 
+          = @book.price_in_euro
       .col-xs-5.col-md-3
         .input-group.general-position
           %a.input-link#minus{ href: '#' }
