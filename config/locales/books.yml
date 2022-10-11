@@ -1,7 +1,7 @@
 en:
   books:
     index:
-      catalog: Сatalog
+      catalog: Catalog
     partials:
       order_options:
         sort_by: Sort by
@@ -12,3 +12,15 @@ en:
           newest: Newest first
           price_asc: 'Price: Low to hight'
           price_desc: 'Price: Hight to low'
+      book:
+        description: Description
+        read_more: Read More
+        year_of_publication: Year of publication
+        dimensions: Dimensions
+        materials: Materials
+      review:
+        write_review: Write a Review
+        score: Score
+        title: Title
+        review: Review
+        post: Post

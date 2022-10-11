@@ -29,25 +29,29 @@
       .col-xs-7.col-md-5
         %button.btn.btn-default.pull-right.general-position Add to Cart
     .general-info-wrap.divider-lg
-      %p Description
+      %p 
+        = t('.description')
       %p.lead.small.line-height-2
       %span.description
         = @book.description
       - if @book.more_description?
         %a.read-more.in-gold-500{ href: '#', for: 'more' }
-          = t('.link.read_more')
+          = t('.read_more')
     .general-info-wrap.divider-lg
       .clearfix
-        %p.pull-left Year of publication
+        %p.pull-left
+          = t('.year_of_publication') 
         %p.lead.small.pull-right 
           = @book.published_at.year
     .general-info-wrap.divider-lg
       .clearfix
-        %p.pull-left Dimensions
+        %p.pull-left
+          = t('.dimensions') 
         %p.lead.small.pull-right
           = @book.dimensions
     .general-info-wrap.divider-lg
       .clearfix
-        %p.pull-left Materials
+        %p.pull-left
+          = t('.materials') 
         %p.lead.small.pull-right
           = @book.materials
