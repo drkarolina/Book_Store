@@ -7,6 +7,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'bootstrap'
 gem 'draper'
 gem 'erubis'
+gem 'ffaker'
 gem 'haml'
 gem 'haml-rails', '~> 2.1'
 gem 'html2haml', require: false
@@ -22,7 +23,6 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'database_consistency', group: :development, require: false
   gem 'fasterer', '~> 0.10.0'
-  gem 'ffaker'
   gem 'overcommit', '~> 0.59.1'
   gem 'rubocop-performance', '~> 1.15'
   gem 'rubocop-rails', '~> 2.16', '>= 2.16.1'
