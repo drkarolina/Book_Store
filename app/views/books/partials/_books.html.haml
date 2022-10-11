@@ -1,0 +1,23 @@
+.mb-100.books-list
+  - @books.each_slice(4).each do |books_group|
+    .row
+      - books_group.each do |book|
+        .col-xs-6.col-sm-3
+          .general-thumb-wrap
+            .thumbnail.general-thumbnail
+              %img.img-shadow.general-thumbnail-img{src: "http://jonathantweedy.com/resources/thumbs/SmashingBook5ResponsiveWebDesign.jpg", alt: "design-book"}
+              .thumb-hover
+                .general-thumb-link-wrap
+                  = link_to book_path(book), class: 'thumb-hover-link' do
+                    .fa.fa-eye.thumb-icon{'aria-hidden': "true"}
+                  %a.thumb-hover-link{href: "#"}
+                    %i.fa.fa-shopping-cart.thumb-icon
+          .general-thumb-info
+            %p.title
+              = book.title
+            %p.font-16.in-gold-500
+              = book.price_in_euro
+            %span.divider-sm
+            %p.lead.small
+              = book.authors_full_name 
+  = render partial: 'books/partials/view_more'

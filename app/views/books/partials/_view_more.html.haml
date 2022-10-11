@@ -1,0 +1,3 @@
+- unless @collection.count <= @books.count
+  .text-center
+    = link_to 'View more', books_path(category_id: params[:category_id], sort_by: params[:sort_by], current_books_count: @books.count)
