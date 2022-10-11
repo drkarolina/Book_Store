@@ -1,4 +1,4 @@
-$(document).ready(() => {
+document.addEventListener("turbolinks:load", function() {
   let Description = $('.description');
   let Link = $('.read-more');
   const DescriptionText = Description.text();
