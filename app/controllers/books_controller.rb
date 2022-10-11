@@ -1,14 +1,16 @@
 require_relative '../queries/books_query'
 class BooksController < ApplicationController
   def index
-    @category_id = params[:category_id]
-    @sort_by = params[:sort_by]
-    books = BookDecorator.decorate_collection(Book.includes(:authors).all)
-    @books = BooksQuery.new(books, @category_id, @sort_by).filter_and_sort
+    books = Book.includes(:authors).all.decorate
+    @books = BooksQuery.new(books, params[:category_id], params[:sort_by]).filter_and_sort
     @categories = Category.includes(:books).all
   end
 
   def show
     @book = Book.includes(:authors).find(params[:id]).decorate
+  end
+
+  def book_params
+    params.permit(:id, :category_id, :sort_by, :current_books_count)
   end
 end
