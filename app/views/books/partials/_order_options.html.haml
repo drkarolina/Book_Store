@@ -17,7 +17,7 @@
         = t("books.partials.order_options.all")
         %span.badge.general-badge 
           = Book.count
-    - @categories.each do |category| 
+    - Category.all.each do |category| 
       %li.mr-35
         %a.filter-link{ href: books_path(category_id: category.id) }
           = category.name

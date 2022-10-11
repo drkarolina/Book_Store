@@ -5,7 +5,6 @@ class BooksController < ApplicationController
     books = Book.includes(:authors).all.decorate
     @collection = BooksQuery.new(books, params[:category_id], params[:sort_by]).filter_and_sort
     @books = @collection.limit(current_books_count)
-    @categories = Category.all
   end
 
   def show
