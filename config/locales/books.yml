@@ -1,0 +1,14 @@
+en:
+  books:
+    index:
+      catalog: Сatalog
+    partials:
+      order_options:
+        sort_by: Sort by
+        all: All
+        options:
+          title_asc: 'Title: A - Z'
+          title_desc: 'Title: Z - A'
+          newest: Newest first
+          price_asc: 'Price: Low to hight'
+          price_desc: 'Price: Hight to low'
