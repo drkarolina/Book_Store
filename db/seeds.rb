@@ -30,6 +30,7 @@ if Book.count.zero?
     width: FFaker::Number.decimal,
     depth: FFaker::Number.decimal,
     materials: FFaker::Lorem.word,
+    quantity: FFaker::Number.number,
     category_id: rand(1..Category.count),
     authors: [authors.sample, authors.sample]
   )
