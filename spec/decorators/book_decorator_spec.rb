@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'BookDecorator', type: :controller do
+RSpec.describe 'BookDecorator' do
   let(:books) { BookDecorator.decorate_collection(Book.includes(:authors).all) }
   let(:authors) do
     "#{books[0].authors[0].first_name} #{books[0].authors[0].last_name}, " \
