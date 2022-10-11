@@ -1,4 +1,5 @@
-- unless @collection.count <= @books.count
-  .text-center
-    %a.btn.btn-primary{ href: books_path(category_id: params[:category_id], sort_by: params[:sort_by], current_books_count: @books.count) }
-      = t('.view_more')
+.view_more_btn
+  - unless @collection.count <= @books.count
+    .text-center
+      %a.btn.btn-primary{ href: books_path(category_id: params[:category_id], sort_by: params[:sort_by], current_books_count: @books.count) }
+        = t('.view_more')
