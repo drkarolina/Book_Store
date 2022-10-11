@@ -5,6 +5,7 @@ import "channels"
 
 require('jquery')
 require('packs/readMore')
+require('packs/cart')
 import "bootstrap"
 import '@fortawesome/fontawesome-free/css/all'
 
