@@ -1,8 +1,6 @@
+require_relative '../constants/constants'
 class BookDecorator < Draper::Decorator
   delegate_all
-
-  SHORT_DESCRIPTION_LENGTH = 250
-
   def authors_full_name
     object.authors.map { |author| author.decorate.full_name }.join(', ')
   end

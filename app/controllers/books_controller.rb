@@ -1,7 +1,6 @@
 require_relative '../queries/books_query'
+require_relative '../constants/constants'
 class BooksController < ApplicationController
-  BOOKS_LOAD_NUMBER = 8
-
   def index
     books = Book.all.decorate
     @collection = BooksQuery.new(books, params[:category_id], params[:sort_by]).filter_and_sort
