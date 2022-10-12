@@ -1,5 +1,5 @@
 require_relative '../constants/constants'
-class BooksQuery
+class BooksFilter
   def initialize(params)
     @params = params
   end
