@@ -1,6 +1,7 @@
 require_relative '../queries/books_query'
 class BooksController < ApplicationController
-  MAX_BOOKS_ON_PAGE = 8
+  LOAD_BOOKS_NUMBER = 8
+
   def index
     books = Book.includes(:authors).all.decorate
     @collection = BooksQuery.new(books, params[:category_id], params[:sort_by]).filter_and_sort
@@ -12,6 +13,6 @@ class BooksController < ApplicationController
   end
 
   def current_books_count
-    params[:current_books_count].nil? ? MAX_BOOKS_ON_PAGE : params[:current_books_count].to_i + MAX_BOOKS_ON_PAGE
+    params[:current_books_count].nil? ? LOAD_BOOKS_NUMBER : params[:current_books_count].to_i + LOAD_BOOKS_NUMBER
   end
 end
