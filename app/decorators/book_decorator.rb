@@ -14,6 +14,6 @@ class BookDecorator < Draper::Decorator
   end
 
   def more_description?
-    object.description.length > SHORT_DESCRIPTION_LENGTH
+    object.description.length > Constants::SHORT_DESCRIPTION_LENGTH
   end
 end

@@ -13,6 +13,8 @@ class BooksController < ApplicationController
   private
 
   def current_books_count
-    params[:current_books_count] ? params[:current_books_count].to_i + BOOKS_LOAD_NUMBER : BOOKS_LOAD_NUMBER
+    return Constants::BOOKS_LOAD_NUMBER unless params[:current_books_count]
+
+    params[:current_books_count].to_i + Constants::BOOKS_LOAD_NUMBER
   end
 end

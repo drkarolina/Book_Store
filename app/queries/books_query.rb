@@ -6,7 +6,7 @@ class BooksQuery
 
   def call
     @books = Book.all.decorate
-    @sort_by = @params[:sort_by] || DEFAULT_SORT
+    @sort_by = @params[:sort_by] || Constants::DEFAULT_SORT
     @category_id = @params[:category_id]
     filter_and_sort
   end
@@ -15,7 +15,7 @@ class BooksQuery
 
   def filter_and_sort
     @books = filter
-    @books.order(SORT_BY[@sort_by.to_sym])
+    @books.order(Constants::SORT_BY[@sort_by.to_sym])
   end
 
   def filter
