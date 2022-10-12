@@ -23,6 +23,8 @@ class BooksQuery
   private
 
   def filter
-    @category_id ? @books.where(category_id: @category_id) : @books
+    return @books unless @category_id
+
+    @books.joins(:categories).where('categories.id': @category_id)
   end
 end
