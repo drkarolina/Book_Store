@@ -10,7 +10,7 @@ class BooksQuery
   DEFAULT_SORT = 'title_asc'.freeze
 
   def initialize(books, category_id, sort_by)
-    @sort_by = sort_by.nil? ? DEFAULT_SORT : sort_by
+    @sort_by = sort_by || DEFAULT_SORT
     @category_id = category_id
     @books = books
   end

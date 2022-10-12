@@ -1,6 +1,6 @@
 require_relative '../queries/books_query'
 class BooksController < ApplicationController
-  LOAD_BOOKS_NUMBER = 8
+  BOOKS_LOAD_NUMBER = 8
 
   def index
     books = Book.includes(:authors).all.decorate
@@ -13,6 +13,6 @@ class BooksController < ApplicationController
   end
 
   def current_books_count
-    params[:current_books_count].nil? ? LOAD_BOOKS_NUMBER : params[:current_books_count].to_i + LOAD_BOOKS_NUMBER
+    params[:current_books_count] ? params[:current_books_count].to_i + BOOKS_LOAD_NUMBER : BOOKS_LOAD_NUMBER
   end
 end
