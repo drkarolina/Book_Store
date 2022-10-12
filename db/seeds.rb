@@ -20,6 +20,7 @@ end
 
 if Book.count.zero?
   authors = Author.all
+  categories = Category.all
 50.times do
   Book.create!(
     title: FFaker::Book.title,
@@ -31,8 +32,8 @@ if Book.count.zero?
     depth: FFaker::Number.decimal,
     materials: FFaker::Lorem.word,
     quantity: FFaker::Number.number,
-    category_id: rand(1..Category.count),
-    authors: [authors.sample, authors.sample]
+    authors: authors.sample(2),
+    categories: categories.sample(2)
   )
   end
 end
