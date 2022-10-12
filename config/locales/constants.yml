@@ -1,7 +1,0 @@
-en:
-  constants:
-    title_asc: 'title ASC'
-    title_desc: 'title DESC'
-    newest: 'published_at DESC'
-    price_asc: 'price ASC'
-    price_desc: 'price DESC'

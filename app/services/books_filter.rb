@@ -1,4 +1,3 @@
-require_relative '../constants/constants'
 class BooksFilter
   def initialize(params)
     @params = params

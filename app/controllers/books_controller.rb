@@ -1,4 +1,3 @@
-require_relative '../constants/constants'
 class BooksController < ApplicationController
   def index
     @collection = BooksFilter.new(params).call

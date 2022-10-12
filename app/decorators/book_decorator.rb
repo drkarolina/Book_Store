@@ -1,4 +1,3 @@
-require_relative '../constants/constants'
 class BookDecorator < Draper::Decorator
   delegate_all
   def authors_full_name
