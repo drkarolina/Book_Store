@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
   def index
-    @collection = BooksFilter.new(params).call
-    @books = @collection.limit(BooksCount.current_books_count(params))
+    @collection, book_count = BooksFilter.new(params).call
+    @books = @collection.limit(book_count)
   end
 
   def show
