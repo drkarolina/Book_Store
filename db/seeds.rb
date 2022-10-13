@@ -1,7 +1,40 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'ffaker'
+
+CATEGORIES = {
+  mobile_development: 'Mobile Development',
+  photo: 'Photo',
+  web_design: 'Web Design',
+  web_development: 'Web Development'
+}.freeze
+
+CATEGORIES.each_value { |category| Category.create(name: category) } if Category.count.zero?
+
+if Author.count.zero?
+  10.times do
+      Author.create!(
+      first_name: FFaker::Name.first_name,
+      last_name: FFaker::Name.last_name
+      )
+  end
+end
+
+if Book.count.zero?
+  authors = Author.all
+  categories = Category.all
+50.times do
+  Book.create!(
+    title: FFaker::Book.title,
+    price: FFaker::Number.decimal,
+    description: FFaker::Book.description,
+    published_at: FFaker::Time.date,
+    height: FFaker::Number.decimal,
+    width: FFaker::Number.decimal,
+    depth: FFaker::Number.decimal,
+    materials: FFaker::Lorem.word,
+    quantity: FFaker::Number.number,
+    authors: authors.sample(2),
+    categories: categories.sample(2)
+  )
+  end
+end
+

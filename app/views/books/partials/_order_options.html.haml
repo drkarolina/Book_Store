@@ -1,0 +1,25 @@
+.hidden-xs.clearfix
+  .dropdowns.pull-right
+    .dropdown.width-240
+      %a.dropdown-toggle.lead.small{href: "#", 'data-toggle': "dropdown", role: "button", 'aria-haspopup': "true", 'aria-expanded': "false"}
+        - if params[:sort_by]
+          = t("books.partials.order_options.options.#{params[:sort_by]}")
+        - else
+          = t("books.partials.order_options.options.title_asc")
+        %i.fa.fa-angle-down.dropdown-icon.pull-right
+      %ul.dropdown-menu
+        - t('books.partials.order_options.options').map do |key, value|
+          %li
+            = link_to value, books_path(category_id: params[:category_id], sort_by: key)
+  %ul.list-inline.pt-10.mb-25.mr-240
+    %li.mr-35
+      %a.filter-link{ href: books_path(sort_by: @sort_by) }
+        = t("books.partials.order_options.all")
+        %span.badge.general-badge 
+          = Book.count
+    - Category.all.each do |category| 
+      %li.mr-35
+        %a.filter-link{ href: books_path(category_id: category.id) }
+          = category.name
+          %span.badge.general-badge 
+            = category.books.count

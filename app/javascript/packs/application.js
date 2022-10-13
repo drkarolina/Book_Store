@@ -4,6 +4,9 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
 require('jquery')
+require('packs/books/readMore')
+require('packs/books/viewMore')
+require('packs/books/cart')
 import "bootstrap"
 import '@fortawesome/fontawesome-free/css/all'
 

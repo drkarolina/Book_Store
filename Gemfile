@@ -5,7 +5,9 @@ ruby '3.0.2'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'bootstrap'
+gem 'draper'
 gem 'erubis'
+gem 'ffaker'
 gem 'haml'
 gem 'haml-rails', '~> 2.1'
 gem 'html2haml', require: false
@@ -40,6 +42,7 @@ end
 group :test do
   gem 'capybara', '>= 3.26'
   gem 'capybara-screenshot', '~> 1.0', '>= 1.0.26'
+  gem 'database_cleaner'
   gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
   gem 'rspec', '~> 3.11'
   gem 'rspec-rails', '~> 5.1', '>= 5.1.2'

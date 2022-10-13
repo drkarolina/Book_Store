@@ -19,15 +19,3 @@ en:
         settings: Settings
         email: support@book_store-rg.com
         phone: (555)-555-5555
-  pages:
-    partials:
-      newest_books:
-        button:
-          buy_now: Buy Now
-          prev: Previous
-          next: Next
-      get_started:
-        greeting: Welcome to our amazing BookStore-rg!
-        introduction: We pore through hundreds of new books each month and select the three best we can find to share with our members.
-        button:
-          get_started: Get Started

@@ -1,0 +1,28 @@
+en:
+  books:
+    index:
+      catalog: Catalog
+    partials:
+      order_options:
+        sort_by: Sort by
+        all: All
+        options:
+          title_asc: 'Title: A - Z'
+          title_desc: 'Title: Z - A'
+          newest: Newest first
+          price_asc: 'Price: Low to hight'
+          price_desc: 'Price: Hight to low'
+      book:
+        description: Description
+        read_more: Read More
+        year_of_publication: Year of publication
+        dimensions: Dimensions
+        materials: Materials
+        add_to_cart: Add to Cart
+      review:
+        write_review: Write a Review
+        score: Score
+        title: Title
+        review: Review
+        post: Post
+      view_more: View more
