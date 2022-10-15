@@ -127,6 +127,8 @@ GEM
     erubi (1.11.0)
     erubis (2.7.0)
     execjs (2.8.1)
+    factory_bot (6.2.1)
+      activesupport (>= 5.0.0)
     fasterer (0.10.0)
       colorize (~> 0.7)
       ruby_parser (>= 3.19.1)
@@ -369,6 +371,7 @@ DEPENDENCIES
   devise
   draper
   erubis
+  factory_bot
   fasterer (~> 0.10.0)
   ffaker
   haml
