@@ -5,6 +5,7 @@ ruby '3.0.2'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'bootstrap'
+gem 'devise'
 gem 'draper'
 gem 'erubis'
 gem 'ffaker'
