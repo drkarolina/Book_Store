@@ -1,17 +1,21 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+%main.container.general-main-wrap
+  .text-center
+    %h3.general-login-title
+      = t('devise.sessions.new.header')
+    %a.general-login-icon{href: "#"}
+      %i.fab.fa-facebook-square
+    %p.general-login-text or
+  = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'general-form' }) do |f|
+    = f.input :email
+    = f.input :password
+    = link_to t('devise.links.forgot_password'), new_password_path(resource_name), class: 'help-block in-gold-500'
+    .form-group.checkbox.text-center.mb-30
+      = f.label(:remember_me, class: 'checkbox-label') do
+        = f.check_box :remember_me, hidden: true, class: 'checkbox-input'
+        %span.checkbox-icon
+          %i.fa.fa-check
+        %span.checkbox-text
+          = t('devise.checkboxes.remember_me')
+    .text-center
+      = f.button :submit, t('devise.buttons.log_in')
+  = render "devise/shared/links"

@@ -1,10 +1,10 @@
-%h2 Forgot your password?
-= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .actions
-    = f.submit "Send me reset password instructions"
-= render "devise/shared/links"
+%main.container.general-main-wrap
+  .text-center
+    %h3.general-login-title
+      = t('devise.passwords.new.header')
+  = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { class: 'general-form' }) do |f|
+    = f.input :email
+    .text-center
+      = f.button :submit, t('devise.buttons.send_instructions')
+      = f.button :button, t('devise.buttons.cancel'), class: 'reset-btn'
+  = render "devise/shared/links"
