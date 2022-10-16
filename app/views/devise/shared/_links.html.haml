@@ -9,6 +9,5 @@
   %br
 - if devise_mapping.confirmable? && controller_name != 'confirmations'
   %p.general-sign-text.text-center
-    = link_to t('.didn_t_receive_confirmation_instructions'), new_confirmation_path(resource_name),
-                class: 'in-gold-500 confirmation'
+    = link_to t('.didn_t_receive_confirmation_instructions'), new_confirmation_path(resource_name), class: 'in-gold-500 confirmation'
   %br
