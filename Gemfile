@@ -13,6 +13,7 @@ gem 'haml'
 gem 'haml-rails', '~> 2.1'
 gem 'html2haml', require: false
 gem 'jbuilder', '~> 2.7'
+gem 'omniauth-facebook'
 gem 'pg', '~> 1.4', '>= 1.4.3'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 6.1.7'
