@@ -6,5 +6,6 @@
     = f.input :email
     .text-center
       = f.button :submit, t('devise.buttons.send_instructions')
-      = f.button :button, t('devise.buttons.cancel'), class: 'reset-btn'
+  %p.text-center
+    = link_to  t('devise.buttons.cancel'), :back, class: 'in-gold-500'
   = render "devise/shared/links"
