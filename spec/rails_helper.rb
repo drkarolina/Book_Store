@@ -6,7 +6,9 @@ require 'rspec/rails'
 require 'capybara/rails'
 require 'capybara/rspec'
 require 'factory_bot'
-require_relative 'factories/user'
+
+Dir[Rails.root.join('spec/support/config/*/*.rb')].each { |file| require file }
+Dir[Rails.root.join('spec/support/config/*.rb')].each { |file| require file }
 
 begin
   ActiveRecord::Migration.maintain_test_schema!
@@ -28,4 +30,5 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
   config.include FactoryBot::Syntax::Methods
+  config.include Devise::Test::ControllerHelpers, type: :controller
 end
