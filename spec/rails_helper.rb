@@ -6,6 +6,7 @@ require 'rspec/rails'
 require 'capybara/rails'
 require 'capybara/rspec'
 require 'factory_bot'
+require_relative 'factories/user'
 
 begin
   ActiveRecord::Migration.maintain_test_schema!
