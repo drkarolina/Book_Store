@@ -7,7 +7,7 @@ module Users
     end
 
     def failure
-      redirect_to root_path
+      redirect_to(root_path, alert: t('devise.omniauth_callbacks.failure'))
     end
 
     private
