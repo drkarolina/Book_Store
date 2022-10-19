@@ -2,9 +2,6 @@
   .text-center
     %h3.general-login-title
       = t('devise.sessions.new.header')
-    = link_to user_facebook_omniauth_authorize_path, method: :post, class: 'general-login-icon facebook' do
-      .fab.fa-facebook-square
-    %p.general-login-text or
   = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'general-form' }) do |f|
     = f.input :email
     = f.input :password
