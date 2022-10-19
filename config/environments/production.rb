@@ -23,10 +23,10 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 
+  config.app_domain = "bookstore-karolina.herokuapp.com"
   config.active_record.dump_schema_after_migration = false
-
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { :host => "https://bookstore-karolina.herokuapp.com/" }
+  config.action_mailer.default_url_options = { host: 'https://bookstore-karolina.herokuapp.com/', :protocol => 'https' }
   config.action_mailer.smtp_settings = {
   address:              'smtp.gmail.com',
   port:                 587,
