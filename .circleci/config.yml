@@ -60,12 +60,6 @@ commands:
       - run:
           name: fasterer
           command: bundle exec fasterer
-  run_bundler-audit:
-    description: command to start bundler-audit
-    steps:
-      - run:
-          name: bundler-audit
-          command: bundle exec bundler-audit --ignore CVE-2015-9284
   run_specs:
     steps:
       - run:
@@ -81,7 +75,6 @@ jobs:
     executor: default
     steps:
       - defaults
-      - run_bundler-audit
   code_style:
     executor: default
     steps:
