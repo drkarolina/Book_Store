@@ -9,4 +9,5 @@ module Constants
     price_desc: 'price DESC'
   }.freeze
   DEFAULT_SORT = SORT_BY.keys.first
+  PASSWORD_FORMAT = /\A(?!.*\s)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/
 end

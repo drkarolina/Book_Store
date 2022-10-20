@@ -1,0 +1,69 @@
+en:
+  devise:
+    links:
+      confirm_account: "Confirm my account"
+      change_password: "Change my password"
+      forgot_password: "Forgot password?"
+      have_account: "Have an Account?"
+      no_account: "Don’t have an Account?"
+      no_confirmation_email: "Didn't receive confirmation instructions?"
+    buttons:
+      change_password: "Change my password"
+      send_instructions: "Send instructions"
+      cancel: "Cancel"
+      resend_confirmation: "Resend confirmation instructions"
+      sign_up: "Sign Up"
+      log_in: "Log In"
+    checkboxes:
+      remember_me: "Remember me"
+    or: "or"
+    confirmations:
+      header: "Resend confirmation instructions"
+      placeholders:
+        enter_email: "Enter Email"
+    mailers:
+      greeting: "Hello %{email}!"
+      confirmation:
+        main_text: "You can confirm your account email through the link below:"
+      email_change:
+        first_main_text: "We're contacting you to notify you that your email is being changed to %{unconfirmed_email}."
+        second_main_text: "We're contacting you to notify you that your email has been changed to %{email}."
+      password_change:
+        main_text: "We're contacting you to notify you that your password has been changed."
+      reset_password:
+        through_link: "Someone has requested a link to change your password. You can do this through the link below."
+        ignore_email: "If you didn't request this, please ignore this email."
+        notice: "Your password won't change until you access the link above and create a new one."
+    passwords:
+      edit:
+        header: "Change your password"
+        labels:
+          new_password: "New password"
+          confirm_password: "Confirm new password"
+        placeholders:
+          enter_password: "Enter Password"
+          confirm_password: "Confirm Password"
+      new:
+        header: "Forgot Password"
+        labels:
+          email: "Enter Email"
+        placeholders:
+          enter_email: "Enter Email"
+    registrations:
+      new:
+        header: "Sign Up"
+        labels:
+          email: "Enter Email"
+          confirm_password: "Confirm Password"
+        placeholders:
+          enter_email: "Enter Email"
+          enter_password: "Password"
+          confirm_password: "Confirm Password"
+    sessions:
+      new:
+        header: "Log In"
+        labels:
+          email: "Enter Email"
+        placeholders:
+          enter_email: "Enter Email"
+          enter_password: "Password"
