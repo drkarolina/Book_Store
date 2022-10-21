@@ -8,10 +8,10 @@ class User < ApplicationRecord
          :omniauthable,
          omniauth_providers: %i[facebook]
 
-  has_one :billing_address, -> { where(address_type: Address.address_type[:billing_address]) },
-          class_name: 'Address', as: :addressable, dependent: :destroy, inverse_of: :addressable
-  has_one :shipping_address, -> { where(address_type: Address.address_type[:shipping_address]) },
-          class_name: 'Address', as: :addressable, dependent: :destroy, inverse_of: :addressable
+  has_one :billing_address, -> { where(address_type: Address.address_types[:billing_address]) },
+          class_name: 'Address', as: :addressable, inverse_of: :addressable, dependent: :destroy
+  has_one :shipping_address, -> { where(address_type: Address.address_types[:shipping_address]) },
+          class_name: 'Address', as: :addressable, inverse_of: :addressable, dependent: :destroy
 
   validates :email, :password, :encrypted_password, presence: true
   validates :password, format: { with: Constants::PASSWORD_FORMAT }
