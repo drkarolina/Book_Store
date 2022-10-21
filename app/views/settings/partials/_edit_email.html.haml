@@ -1,0 +1,10 @@
+%p.in-gold-500.font-18.mb-25 
+  = t('.email')
+%form.general-form-md
+  .form-group.mb-35
+    %label.control-label.input-label{for: "email"}
+      = t('.enter_email')
+    %input#email.form-control{name:"email", type: "email", placeholder: t('.enter_email_placeholder')}
+  .general-text-align
+    %button.btn.btn-default.mb-35
+      = t('.save')

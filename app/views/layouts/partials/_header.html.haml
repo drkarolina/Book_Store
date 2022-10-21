@@ -36,7 +36,7 @@
                   %a.collapse-link{href: '#'}
                     = t('.orders')
                 %li
-                  %a.collapse-link{href: '#'}
+                  %a.collapse-link{href: settings_url}
                     = t('.settings')
             %li
               = link_to t('.log_out'), destroy_user_session_path, method: :delete
@@ -66,7 +66,7 @@
                   %a{href: '#'}
                     = t('.orders')
                 %li
-                  %a{href: '#'}
+                  %a{href: settings_url}
                     = t('.settings')
                 %li.divider{role: "separator"}
                 %li

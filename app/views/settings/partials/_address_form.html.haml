@@ -1,0 +1,88 @@
+#address.tab-pane.fade.in.active{role: "tabpanel"}
+  .general-main-wrap
+    %form
+      .hidden-xs.hidden-sm
+        .row
+          .col-md-5
+            %h3.general-subtitle.mt-0 
+              = t('.billing_address')
+          .col-md-5.col-md-offset-1
+            %h3.general-subtitle.mt-0 
+              = t('.shipping_address')
+      .row
+        .col-md-5.mb-40
+          .visible-xs.visible-sm
+            %h3.general-subtitle.mt-0
+              = t('.billing_address')
+          .form-group
+            %label.control-label.input-label{for: "firstName"} 
+              = t('.first_name')
+            %input#firstName.form-control{name:"fname", type: "text", placeholder: t('.first_name')}
+          .form-group
+            %label.control-label.input-label{for: "lastName"}
+              = t('.last_name')
+            %input#lastName.form-control{name:"lname", type: "text", placeholder: t('.last_name')}
+          .form-group
+            %label.control-label.input-label{for: "address"}
+              = t('.address')
+            %input#address.form-control{name: "address", type: "text", placeholder: t('.address')}
+          .form-group
+            %label.control-label.input-label{for: "city"}
+              = t('.city')
+            %input#city.form-control{name: "city", type: "text", placeholder: t('.city')}
+          .form-group
+            %label.control-label.input-label{for: "zip"}
+              = t('.zip')
+            %input#zip.form-control{name: "zip", type: "text", placeholder: t('.zip')}
+          .form-group
+            %label.control-label.input-label{for: "сountry"} 
+              = t('.country')
+            %select#country.form-control{name: "country", placeholder: t('.select_country')}
+              %option London
+              %option London
+              %option London
+          .form-group.mb-60
+            %label.control-label.input-label{for: "phone"} 
+              = t('.phone')
+            %input#phone.form-control{name: "phone", type: "tel", placeholder: t('.phone_example')}
+          .text-center.general-text-align
+            %button.btn.disable
+              = t('.save')
+        .col-md-5.col-md-offset-1.mb-25
+          .visible-xs.visible-sm
+            %h3.general-subtitle.mt-0 
+              = t('.shipping_address')
+          .form-group
+            %label.control-label.input-label{for: "firstName"}
+              = t('.first_name')
+            %input#firstName.form-control{name:"fname", type: "text", placeholder: t('.first_name')}
+          .form-group
+            %label.control-label.input-label{for: "lastName"}
+              = t('.last_name')
+            %input#lastName.form-control{name:"lname", type: "text", placeholder: t('.last_name')}
+          .form-group
+            %label.control-label.input-label{for: "address"}
+              = t('.address')
+            %input#address.form-control{name: "address", type: "text", placeholder: t('.address')}
+          .form-group
+            %label.control-label.input-label{for: "city"}
+              = t('.city')
+            %input#city.form-control{name: "city", type: "text", placeholder: t('.city')}
+          .form-group
+            %label.control-label.input-label{for: "zip"} 
+              = t('.zip')
+            %input#zip.form-control{name: "zip", type: "text", placeholder: t('.zip')}
+          .form-group
+            %label.control-label.input-label{for: "сountry"}
+              = t('.country')
+            %select#country.form-control{name: "country", placeholder: t('.select_country')}
+              %option London
+              %option London
+              %option London
+          .form-group.mb-55
+            %label.control-label.input-label{for: "phone"}
+              = t('.phone')
+            %input#phone.form-control{name: "phone", type: "tel", placeholder: t('.phone_example')}
+          .text-center.general-text-align
+            %button.btn.disabled
+              = t('.save')
