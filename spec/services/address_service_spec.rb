@@ -7,7 +7,7 @@ RSpec.describe AddressService do
   describe '#call' do
     context 'with invalid params' do
       it 'returns false' do
-        expect(described_class.new(user, invalid_params).call).to be false
+        expect(described_class.new(user, invalid_params).confirm_form).to be false
       end
     end
   end

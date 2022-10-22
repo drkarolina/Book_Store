@@ -7,18 +7,18 @@ class AddressService
     @params = params.merge(addressable: user)
   end
 
-  def call
-    @form.valid? ? manage_address : collect_errors
+  def confirm_form
+    @form.valid? ? update_address : check_errors
   end
 
   private
 
-  def collect_errors
+  def check_errors
     @errors = @form.errors || {}
     @errors.blank?
   end
 
-  def manage_address
+  def update_address
     address.update(@params)
   end
 

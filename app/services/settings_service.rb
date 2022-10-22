@@ -22,7 +22,7 @@ class SettingsService
   end
 
   def countries
-    @countries ||= ISO3166::Country.all
+    ISO3166::Country.all
   end
 
   private
