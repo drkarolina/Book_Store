@@ -22,14 +22,14 @@ RSpec.describe AddressesController, type: :controller do
     end
 
     context 'when save shipping address with invalid params' do
-      let(:params) { attributes_for(:billing_address, address_type: 'shipping', city: '') }
+      let(:params) { attributes_for(:shipping_address, address_type: 'shipping_address', city: '') }
 
       it { expect(response).to have_http_status(:ok) }
       it { expect(response).to render_template(:index) }
     end
 
     context 'when save shipping address with valid params' do
-      let(:params) { attributes_for(:billing_address, address_type: 'shipping') }
+      let(:params) { attributes_for(:shipping_address, address_type: 'shipping_address') }
 
       it { expect(response).to have_http_status(:ok) }
     end
