@@ -29,7 +29,7 @@ en:
           save: Save
         password_form:
           password: Password
-          old_password: Old Password
+          current_password: Old Password
           new_password: New Password
           confirm_password: Confirm Password
           save: Save
