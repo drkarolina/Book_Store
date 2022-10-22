@@ -1,9 +1,8 @@
 %p.in-gold-500.font-18.mb-25
   = t('.remove_account')
-%form
+= simple_form_for(current_user, url: registration_path(:user), method: :delete, html: { id: 'remove-account' }) do |f|
   .general-settings-btn
-    %button.btn.disabled.mb-20 
-      = t('.remove_account_btn')
+    = f.button :submit, t('.remove'), data: { confirm: t('.confirmation') }, class: 'disabled remove-account', disabled: 'true'
   .form-group.checkbox.general-settings-checkbox
     %label.checkbox-label
       %input.checkbox-input{type: "checkbox", hidden: "true"}
