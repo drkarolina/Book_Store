@@ -1,8 +1,8 @@
 class AddressForm
   include ActiveModel::Model
-  attr_accessor :first_name, :last_name, :address, :city, :zip_code, :country, :phone, :address_type
+  attr_accessor :first_name, :last_name, :address, :city, :zip, :country, :phone, :address_type
 
-  validates :first_name, :last_name, :address, :city, :zip_code, :country, :phone, presence: true
+  validates :first_name, :last_name, :address, :city, :zip, :country, :phone, presence: true
   validates :first_name, :last_name, :country, :city, length: { maximum: Constants::NAME_MAX_SIZE },
                                                       format: { with: Constants::VALIDATE_NAME,
                                                                 message: I18n.t('addresses.validation.names_format') }
@@ -12,9 +12,9 @@ class AddressForm
   validates :phone, length: { maximum: Constants::PHONE_MAX_SIZE },
                     format: { with: Constants::VALIDATE_PHONE,
                               message: I18n.t('addresses.validation.phone_format') }
-  validates :zip_code, length: { maximum: Constants::ZIP_MAX_SIZE },
-                       format: { with: Constants::VALIDATE_ZIP,
-                                 message: I18n.t('addresses.validation.zip_format') }
+  validates :zip, length: { maximum: Constants::ZIP_MAX_SIZE },
+                  format: { with: Constants::VALIDATE_ZIP,
+                            message: I18n.t('addresses.validation.zip_format') }
 
   validate :country_selected_from_list, unless: -> { country.blank? }
   validate :country_code_of_phone, unless: -> { phone.blank? }

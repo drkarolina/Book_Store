@@ -12,7 +12,7 @@ en:
         last_name: "Last Name"
         address: "Address"
         city: "City"
-        zip_code: "Zip"
+        zip: "Zip"
         email: "Enter Email"
         country: "Select a country"
         phone: "Example +355 66 123 4567"
@@ -23,7 +23,7 @@ en:
       defaults:
         first_name: "First Name"
         last_name: "Last Name"
-        zip_code: "Zip"
+        zip: "Zip"
         email: "Enter Email"
         current_password: "Old password"
         password: "Password"
