@@ -34,6 +34,6 @@ en:
           confirm_password: Confirm Password
           save: Save
         remove_account_form:
-          remove_account: Remove Account
-          remove_account_btn: Please Remove My Account
-          remove_account_checkbox: I understand that all data will be lost
+          remove: Please Remove My Account
+          confirmation: Are you sure?
+          confirm_remove: I understand that all data will be lost
