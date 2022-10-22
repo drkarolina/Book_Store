@@ -1,3 +1,5 @@
+%p.in-gold-500.font-18.mb-25
+  = t('.email')
 = simple_form_for(current_user, url: registration_path(:user), method: :put, html: { id: 'edit-email' }) do |form|
   = form.input :email, input_html: { value: current_user.email }
   = form.input :password
