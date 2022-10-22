@@ -4,7 +4,7 @@ module Users
 
     def update
       update_result = account_update_params[:email] ? update_email : update_resource(resource, account_update_params)
-      update_result ? send_successful_response : send_fail_response
+      update_result ? successful_response : fail_response
     end
 
     private
@@ -15,13 +15,13 @@ module Users
       current_user.update(account_update_params)
     end
 
-    def send_successful_response
+    def successful_response
       set_flash_message_for_update(resource, resource.unconfirmed_email)
       bypass_sign_in(resource, scope: resource_name)
       respond_with(resource, location: settings_path)
     end
 
-    def send_fail_response
+    def fail_response
       flash.alert = t('devise.registrations.update.alert')
       @settings_service = SettingsService.new(resource)
       render 'settings/index'
