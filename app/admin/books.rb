@@ -25,7 +25,7 @@ ActiveAdmin.register Book do
       f.input :title
       f.input :categories, collection: Category.all, as: :check_boxes
       f.input :authors, collection: Author.all.decorate, as: :check_boxes
-      f.input :description
+      f.input :description, as: :simplemde_editor
       f.input :published_at, as: :datepicker, datepicker_options: { min_date: '1900-01-01' }
       f.input :price, min: 0
       f.input :height, min: 0
