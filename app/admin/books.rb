@@ -4,6 +4,11 @@ ActiveAdmin.register Book do
                 :materials, :quantity, category_ids: [], author_ids: []
   includes :categories, :authors
 
+  preserve_default_filters!
+  remove_filter :author_book
+  remove_filter :category_book
+  filter :authors, as: :select, collection: proc { Author.order(:first_name).decorate }
+
   index do
     selectable_column
     id_column
