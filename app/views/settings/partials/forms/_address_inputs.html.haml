@@ -1,0 +1,4 @@
+= form.input_field field, collection: collection, class: 'form-control'
+- if errors.present? && errors.messages.key?(field)
+  %span.help-block
+    = errors.full_messages_for(field).to_sentence

@@ -1,0 +1,5 @@
+= simple_form_for([:address, address], url: addresses_path, method: :post,
+                                                        html: { id: "#{address_type}-address-form" }) do |form|
+  = render partial: 'settings/partials/forms/address_fields', locals: { form: form, address_type: address_type, errors: errors, countries: countries }
+  .text-center
+    = form.button :submit, t('.save')
