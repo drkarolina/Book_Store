@@ -9,25 +9,25 @@ ActiveAdmin.register Author do
     selectable_column
     id_column
 
-    column :first_name
-    column :last_name
-    column :description
+    column I18n.t('author.field.first_name'), :first_name
+    column I18n.t('author.field.last_name'), :last_name
+    column I18n.t('author.field.description'), :description
     actions
   end
 
   show do
     attributes_table do
-      row :first_name
-      row :last_name
-      row :description
+      row I18n.t('author.field.first_name'), &:first_name
+      row I18n.t('author.field.last_name'), &:last_name
+      row I18n.t('author.field.description'), &:description
     end
   end
 
   form do |f|
     f.inputs do
-      f.input :first_name
-      f.input :last_name
-      f.input :description
+      f.input :first_name, label: I18n.t('author.field.first_name')
+      f.input :last_name, label: I18n.t('author.field.last_name')
+      f.input :description, label: I18n.t('author.field.description')
     end
     actions
   end

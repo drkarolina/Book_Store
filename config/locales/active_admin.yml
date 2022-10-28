@@ -1,0 +1,30 @@
+en:
+  author:
+    field:
+      first_name: First name
+      last_name: Last name
+      description: Description
+  book:
+    field:
+      title: Title
+      categories: Categories
+      authors: Authors
+      description: Description
+      price: Price
+      published_at: Published At
+      height: Height
+      width: Width
+      depth: Depth
+      materials: Materials
+      quantity: Quantity
+  category:
+    field:
+      name: Name
+  admin_user:
+    field:
+        email: Email
+        current_sign_in_at: Current Sign In At
+        sign_in_count: Sign In Count
+        created_at: Created At
+        password: Password
+        password_confirmation: Password Confirmation
