@@ -18,4 +18,8 @@ RSpec.describe 'BookDecorator' do
   describe 'BooksController#dimensions' do
     it { expect(books[0].dimensions).to eq("H: #{books[0].height}\" x W: #{books[0].width}\" x D: #{books[0].depth}") }
   end
+
+  describe 'BooksController#short_description' do
+    it { expect(books[0].short_description).to eq(books[0].description.truncate(Constants::SHORT_DESCRIPTION_LENGTH)) }
+  end
 end
