@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.2'
 
+gem 'activeadmin'
+gem 'activeadmin_simplemde'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'bootstrap'
 gem 'country_select', '~> 6.0'
@@ -20,6 +22,7 @@ gem 'omniauth-rails_csrf_protection', '~> 1.0'
 gem 'pg', '~> 1.4', '>= 1.4.3'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 6.1.7'
+gem 'redcarpet'
 gem 'sass-rails', '>= 6'
 gem 'simple_form'
 gem 'turbolinks', '~> 5'

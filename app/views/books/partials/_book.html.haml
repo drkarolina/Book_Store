@@ -33,12 +33,17 @@
       %p 
         = t('.description')
       %p.lead.small.line-height-2
-      %span.description
-        = @book.description
-      - if @book.more_description?
-        %a.read-more.in-gold-500{ href: '#', for: 'more' }
-          = t('.read_more')
-    .general-info-wrap.divider-lg
+        - if @book.description.length < Constants::SHORT_DESCRIPTION_LENGTH
+          %div#description
+            = h markdown(@book.description).html_safe
+        -else
+          %div#description_long{:style=>"display:none;"}
+            = h markdown(@book.description).html_safe
+          %div#description_short
+            = h markdown(@book.short_description).html_safe
+          %a.read-more.in-gold-500{ href: '#', for: 'more' }
+            = t('.read_more')
+      .general-info-wrap.divider-lg
       .clearfix
         %p.pull-left
           = t('.year_of_publication') 
