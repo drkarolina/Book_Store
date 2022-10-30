@@ -21,4 +21,11 @@ module Constants
   VALIDATE_PHONE = /\A\+[0-9]+\z/
   VALIDATE_ZIP = /\A[0-9-]+\z/
 
+  MIN_RATING = 0
+  MAX_RATING = 5
+
+  MAX_REVIEW_TEXT_LENGTH = 500
+
+  VALIDATE_REVIEW = /\A[a-zA-Z0-9\W]+\Z/
+
 end
