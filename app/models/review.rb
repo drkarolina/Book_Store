@@ -3,4 +3,6 @@ class Review < ApplicationRecord
   belongs_to :user
 
   validates :title, :text, :rating, :status, presence: true
+
+  enum status: { unprocessed: 0, approved: 1, rejected: 2 }
 end
