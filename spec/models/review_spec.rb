@@ -15,7 +15,6 @@ RSpec.describe Review, type: :model do
     it { is_expected.to validate_presence_of(:title) }
     it { is_expected.to validate_presence_of(:text) }
     it { is_expected.to validate_presence_of(:rating) }
-    it { is_expected.to validate_presence_of(:status) }
   end
 
   describe 'Validations' do

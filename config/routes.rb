@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :books, only: %i[index show]
   resources :settings, only: %i[index]
   resources :addresses, only: %i[create]
+  resources :reviews, only: %i[create]
 end

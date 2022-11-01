@@ -1,0 +1,4 @@
+en:
+  reviews:
+    create:
+      success: Review was created successfully
