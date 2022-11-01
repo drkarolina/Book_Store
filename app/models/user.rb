@@ -25,4 +25,8 @@ class User < ApplicationRecord
       user.skip_confirmation!
     end
   end
+
+  def to_s
+    email
+  end
 end

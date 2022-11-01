@@ -28,3 +28,11 @@ en:
         created_at: Created At
         password: Password
         password_confirmation: Password Confirmation
+  review:
+    field:
+      title: Title
+      text: Text
+      rating: Rating
+      status: Status
+      user: User
+      book: Book
