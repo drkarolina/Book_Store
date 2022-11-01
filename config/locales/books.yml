@@ -29,4 +29,5 @@ en:
         invalid_text: Should not be not empty, consist of a-z, A-Z, 0-9, or one of !#$%&'*+-/=?^_`{|}~. and must be less than 80 characters.
       reviews:
         reviews_number: 'Reviews (%{number})'
+        creation_date: '%d/%m/%y'
       view_more: View more
