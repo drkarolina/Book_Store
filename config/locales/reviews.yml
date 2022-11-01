@@ -1,4 +1,4 @@
 en:
   reviews:
     create:
-      success: Review was created successfully
+      success: Thanks for Review. It will be published as soon as Admin will approve it.
