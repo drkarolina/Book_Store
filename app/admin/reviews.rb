@@ -1,7 +1,6 @@
 ActiveAdmin.register Review do
   permit_params :title, :text, :rating, :status, :user_id, :book_id
   includes :book, :user
-  config.filters = false
   actions :index, :show
 
   scope :unprocessed, default: true
@@ -19,11 +18,12 @@ ActiveAdmin.register Review do
   index do
     selectable_column
     id_column
-    column :book
-    column :title
-    column :created_at
-    column :user
-    column :status
+
+    column I18n.t('review.field.book'), :book
+    column I18n.t('review.field.title'), :title
+    column I18n.t('review.field.created_at'), :created_at
+    column I18n.t('review.field.user'), :user
+    column I18n.t('review.field.status'), :status
     actions
   end
 
