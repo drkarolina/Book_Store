@@ -1,0 +1,18 @@
+.mb-80
+  = simple_form_for(:review, url: reviews_path) do |f|
+    %h3
+      = t('.write_review')
+    %p.general-info-text
+      = t('.score')
+    .mb-15#stars
+      - Constants::MAX_RATING.times do |index|
+        %i.fa.fa-star.rate-star.rate-empty{ data: { value: index+1 } }
+    .row
+      .col-md-8
+        .mb-40
+          = f.input :title
+          = f.input :text, as: :text
+          = f.hidden_field :rating, value: 0 
+          = f.hidden_field :user_id, value: current_user.id 
+          = f.hidden_field :book_id, value: params[:id]
+          = f.button :submit, t('.post')

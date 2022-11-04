@@ -6,5 +6,6 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id]).decorate
+    @reviews = @book.reviews.includes(:user).approved.decorate
   end
 end

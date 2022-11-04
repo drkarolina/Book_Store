@@ -7,6 +7,7 @@ require('jquery')
 require('packs/books/readMore')
 require('packs/books/viewMore')
 require('packs/books/cart')
+require('packs/books/reviewStars')
 require('packs/settings/remove_account')
 import "bootstrap"
 import '@fortawesome/fontawesome-free/css/all'

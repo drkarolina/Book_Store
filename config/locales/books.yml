@@ -19,10 +19,15 @@ en:
         dimensions: Dimensions
         materials: Materials
         add_to_cart: Add to Cart
-      review:
+      review_form:
         write_review: Write a Review
         score: Score
         title: Title
         review: Review
         post: Post
+        invalid_title: Should not be not empty, consist of a-z, A-Z, 0-9, or one of !#$%&'*+-/=?^_`{|}~. and must be less than 80 characters.
+        invalid_text: Should not be not empty, consist of a-z, A-Z, 0-9, or one of !#$%&'*+-/=?^_`{|}~. and must be less than 80 characters.
+      reviews:
+        reviews_number: 'Reviews (%{number})'
+        creation_date: '%d/%m/%y'
       view_more: View more
