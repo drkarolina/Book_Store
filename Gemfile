@@ -15,6 +15,7 @@ gem 'ffaker'
 gem 'haml'
 gem 'haml-rails', '~> 2.1'
 gem 'html2haml', require: false
+gem 'image_processing'
 gem 'jbuilder', '~> 2.7'
 gem 'omniauth'
 gem 'omniauth-facebook'
