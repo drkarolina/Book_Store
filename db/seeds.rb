@@ -21,8 +21,8 @@ end
 if Book.count.zero?
   authors = Author.all
   categories = Category.all
-50.times do
-  Book.create!(
+10.times do
+  b = Book.create(
     title: FFaker::Book.title,
     price: FFaker::Number.decimal,
     description: FFaker::Book.description,
@@ -33,7 +33,15 @@ if Book.count.zero?
     materials: FFaker::Lorem.word,
     quantity: FFaker::Number.number,
     authors: authors.sample(2),
-    categories: categories.sample(2)
+    categories: categories.sample(2), 
+  )
+  b.preview_image.attach(
+    io:  File.open(File.join(Rails.root,'public/seeds/book_preview_image.jpg')),
+    filename: 'book_preview_image.jpg'
+  )
+  b.images.attach(
+    io:  File.open(File.join(Rails.root,'public/seeds/book_image.jpg')),
+    filename: 'book_image.jpg'
   )
   end
 end
