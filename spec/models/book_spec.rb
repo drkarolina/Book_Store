@@ -33,4 +33,9 @@ RSpec.describe Book, type: :model do
       end
     end
   end
+
+  context 'with images' do
+    it { expect(book_build.preview_image).to be_an_instance_of(ActiveStorage::Attached::One) }
+    it { expect(book_build.images).to be_an_instance_of(ActiveStorage::Attached::Many) }
+  end
 end
