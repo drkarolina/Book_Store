@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :reviews, only: %i[create]
   resources :order_items, only: %i[create update destroy]
   resources :carts, only: %i[index]
+  resource :coupon, only: %i[update]
 end

@@ -34,4 +34,7 @@ module Constants
 
   MIN_DISCOUNT = 0.1
   MAX_DISCOUNT = 100
+
+  COUPON_DEVIDER = 100
+  DEFAULT_DISCOUNT = 0
 end
