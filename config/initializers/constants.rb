@@ -28,4 +28,5 @@ module Constants
 
   VALIDATE_REVIEW = /\A[a-zA-Z0-9\W]+\Z/
 
+  SMALL_SIZE_IMAGE = '200x200'
 end

@@ -6,7 +6,8 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.navbar-brand= t'.brand'
+      %a.navbar-brand{href: root_path}
+        = t'.brand'
       %a.shop-link.pull-right.visible-xs{href: "#"}
         %span.shop-icon
           %span.shop-quantity 3
@@ -24,9 +25,11 @@
             %a{type: "button", 'data-toggle': "collapse", href: "#menu", 'aria-expanded': "false", 'aria-controls': "menu"}
               = t('.shop')
             %ul#menu.collapse.list-unstyled.pl-30.mb-10{'aria-expanded': "false"}
+              %li
+                =link_to t('.all'), books_path, class: 'collapse-link'
               - Category.all.each do |category|
                 %li
-                  =link_to category.name, books_path(category_id: category.id), class: 'collapse-link'
+                  = link_to category.name, books_path(category_id: category.id), class: 'collapse-link'
           - if user_signed_in?
             %li
               %a{type: "button", 'data-toggle': "collapse", href: "#menu_account", 'aria-expanded': "false", 'aria-controls': "menu"}
@@ -54,6 +57,8 @@
             %a.shop_link.dropdown-toggle{href: "#", 'data-toggle': "dropdown", role: "button", 'aria-haspopup': "true", 'aria-expanded': "false"}
               = t('.shop')
             %ul.dropdown-menu
+              %li
+                =link_to t('.all'), books_path, class: 'collapse-link'
               - Category.all.each do |category|
                 %li
                   =link_to category.name, books_path(category_id: category.id), class: 'collapse-link'

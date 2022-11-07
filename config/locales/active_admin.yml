@@ -17,6 +17,8 @@ en:
       depth: Depth
       materials: Materials
       quantity: Quantity
+      preview_image: Preview Image
+      images: Images      
   category:
     field:
       name: Name

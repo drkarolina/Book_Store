@@ -1,7 +1,7 @@
 ActiveAdmin.register Book do
   decorate_with BookDecorator
   permit_params :title, :price, :description, :published_at, :height, :width, :depth,
-                :materials, :quantity, category_ids: [], author_ids: []
+                :materials, :quantity, :preview_image, images: [], category_ids: [], author_ids: []
   includes :categories, :authors
 
   preserve_default_filters!
@@ -19,6 +19,9 @@ ActiveAdmin.register Book do
     column I18n.t('book.field.authors'), :authors_full_name
     column I18n.t('book.field.description'), :short_description
     column I18n.t('book.field.price'), :price
+    column :preview_image do |book|
+      image_tag book.preview_image.variant(resize: Constants::SMALL_SIZE_IMAGE) if book.preview_image.attached?
+    end
     actions
   end
 
@@ -36,6 +39,8 @@ ActiveAdmin.register Book do
       f.input :depth, min: 0, label: I18n.t('book.field.depth')
       f.input :materials, label: I18n.t('book.field.materials')
       f.input :quantity, min: 0, label: I18n.t('book.field.quantity')
+      f.input :preview_image, as: :file, label: I18n.t('book.field.preview_image')
+      f.input :images, as: :file, input_html: { multiple: true }, label: I18n.t('book.field.images')
     end
     actions
   end
@@ -53,6 +58,18 @@ ActiveAdmin.register Book do
       row I18n.t('book.field.depth'), &:depth
       row I18n.t('book.field.materials'), &:materials
       row I18n.t('book.field.quantity'), &:quantity
+      row :preview_image do |book|
+        image_tag book.preview_image.variant(resize: Constants::SMALL_SIZE_IMAGE) if book.preview_image.attached?
+      end
+      row :images do |book|
+        ul do
+          book.images.each do |img|
+            li do
+              image_tag img.variant(resize: Constants::SMALL_SIZE_IMAGE)
+            end
+          end
+        end
+      end
     end
   end
 end

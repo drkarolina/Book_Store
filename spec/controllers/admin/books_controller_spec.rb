@@ -25,6 +25,7 @@ RSpec.describe Admin::BooksController, type: :controller do
     it { expect(page).to have_content(book.title) }
     it { expect(page).to have_content(book.description.truncate(Constants::SHORT_DESCRIPTION_LENGTH)) }
     it { expect(page).to have_content(book.price) }
+    it { expect(page).to have_content(I18n.t('book.field.preview_image')) }
   end
 
   context 'when renders the show page' do
@@ -41,6 +42,8 @@ RSpec.describe Admin::BooksController, type: :controller do
     it { expect(page).to have_content(book.depth) }
     it { expect(page).to have_content(book.materials) }
     it { expect(page).to have_content(book.quantity) }
+    it { expect(page).to have_content(I18n.t('book.field.preview_image')) }
+    it { expect(page).to have_content(I18n.t('book.field.images')) }
   end
 
   context 'when create' do
