@@ -37,5 +37,5 @@
           %span.font-16.in-gold-500 
             = I18n.t('.price_in_euro', price: order_item.total_price )
         %td
-          %button.close.general-cart-close{type: "button", 'aria-label': "Close"}
-            %span{'aria-hidden': "true"} &times;
+          = link_to order_item_path(order_item), method: :delete, class: 'close general-cart-close', 'aria-label': 'Close' do
+            %span{ 'aria-hidden': 'true' } &times;

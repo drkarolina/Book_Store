@@ -9,6 +9,11 @@ class OrderItemsController < ApplicationController
     redirect_back fallback_location: carts_path
   end
 
+  def destroy
+    OrderItem.find(params[:id]).destroy
+    redirect_back fallback_location: carts_path
+  end
+
   private
 
   def order_item_params
