@@ -14,6 +14,7 @@ class User < ApplicationRecord
           class_name: 'Address', as: :addressable, inverse_of: :addressable, dependent: :destroy
 
   has_many :reviews, dependent: :destroy
+  has_many :orders, dependent: :destroy
 
   validates :email, :password, :encrypted_password, presence: true
   validates :password, format: { with: Constants::PASSWORD_FORMAT }
