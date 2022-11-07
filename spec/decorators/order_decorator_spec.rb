@@ -23,6 +23,6 @@ RSpec.describe 'OrderDecorator' do
   end
 
   describe 'OrderDecorator#total_with_discount' do
-    it { expect(order.total_with_discount).to eq(order.total_price - order.coupon_discount) }
+    it { expect(order.total_with_discount).to eq((order.total_price - order.coupon_discount).round(2)) }
   end
 end

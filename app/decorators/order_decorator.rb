@@ -11,6 +11,6 @@ class OrderDecorator < ApplicationDecorator
   end
 
   def total_with_discount
-    total_price - coupon_discount
+    (total_price - coupon_discount).round(2)
   end
 end
