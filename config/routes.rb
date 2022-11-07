@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :addresses, only: %i[create]
   resources :reviews, only: %i[create]
   resources :order_items, only: %i[create update destroy]
+  resources :carts, only: %i[index]
 end
