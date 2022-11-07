@@ -47,3 +47,6 @@ if Book.count.zero?
 end
 
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+user = User.new(email: 'user@example.com', password: '123123Qq', password_confirmation: '123123Qq')
+user.skip_confirmation!
+user.save!
