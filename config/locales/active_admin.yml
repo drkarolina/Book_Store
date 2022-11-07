@@ -39,3 +39,9 @@ en:
       user: User
       book: Book
       created_at: Created At
+  coupon:
+    field:
+      code: Code
+      discount: Discount
+      is_valid: Is Valid
+      order_id: Order
