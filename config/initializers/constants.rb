@@ -31,4 +31,7 @@ module Constants
   SMALL_SIZE_IMAGE = '200x200'
 
   MIN_BOOK_QUANTITY = 1
+
+  MIN_DISCOUNT = 0.1
+  MAX_DISCOUNT = 100
 end

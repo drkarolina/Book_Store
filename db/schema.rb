@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_07_115502) do
+ActiveRecord::Schema.define(version: 2022_11_07_131911) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -131,6 +131,16 @@ ActiveRecord::Schema.define(version: 2022_11_07_115502) do
     t.index ["category_id"], name: "index_category_books_on_category_id"
   end
 
+  create_table "coupons", force: :cascade do |t|
+    t.string "code"
+    t.float "discount"
+    t.boolean "is_valid", default: true
+    t.bigint "order_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["order_id"], name: "index_coupons_on_order_id"
+  end
+
   create_table "order_items", force: :cascade do |t|
     t.bigint "order_id", null: false
     t.bigint "book_id", null: false
@@ -187,6 +197,7 @@ ActiveRecord::Schema.define(version: 2022_11_07_115502) do
   add_foreign_key "author_books", "books"
   add_foreign_key "category_books", "books"
   add_foreign_key "category_books", "categories"
+  add_foreign_key "coupons", "orders"
   add_foreign_key "order_items", "books"
   add_foreign_key "order_items", "orders"
   add_foreign_key "orders", "users", on_delete: :cascade
