@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   resources :order_items, only: %i[create update destroy]
   resources :carts, only: %i[index]
   resource :coupon, only: %i[update]
+  resources :checkout, only: %i[index]
+  get '/checkout_login', to: 'checkout#checkout_login'
 end
