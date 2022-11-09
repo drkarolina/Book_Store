@@ -1,5 +1,7 @@
 en:
   devise:
+    errors:
+      custom_login_failure: "Email or Password is invalid"
     links:
       confirm_account: "Confirm my account"
       change_password: "Change my password"
