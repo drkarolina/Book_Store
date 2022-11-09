@@ -10,7 +10,7 @@
                 .general-thumb-link-wrap
                   = link_to book_path(book), class: 'thumb-hover-link' do
                     .fa.fa-eye.thumb-icon{'aria-hidden': "true"}
-                  %a.thumb-hover-link{href: "#"}
+                  = link_to order_items_path(order_item: {quantity: Constants::MIN_BOOK_QUANTITY, book_id: book.id}), method: :post, class: 'thumb-hover-link' do
                     %i.fa.fa-shopping-cart.thumb-icon
           .general-thumb-info
             %p.title

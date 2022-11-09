@@ -1,0 +1,41 @@
+.hidden-xs
+  %table.table.table-hover
+    %tr.no-hover
+      %th.col-pic.pl-0
+        %span.in-grey-600 
+          = t('.product')
+      %th.col-title
+      %th.col-price
+        %span.in-grey-600           
+          = t('.price')
+      %th.col-quantity
+        %span.in-grey-600
+          = t('.quantity')
+      %th.col-total
+        %span.in-grey-600
+          = t('.subtotal')
+      %th.col-close
+    - @order.order_items.each do |order_item|
+      %tr
+        %td
+          .general-img-wrap-table
+            = link_to book_path(order_item.book) do
+              = image_tag(order_item.book.preview_image, alt: order_item.book.title, class: 'cart-img-shadow pull-left')
+        %td
+          = link_to order_item.book.title, book_path(order_item.book), class: 'title'
+        %td
+          %span.font-16.in-gold-500 
+            = I18n.t('.price_in_euro', price: order_item.book.price )
+        %td
+          .input-group
+            = link_to order_item_path(order_item, order_item: {quantity: order_item.quantity - 1, book_id: order_item.book_id}), method: :put, class: 'input-link' do
+              %i.fa.fa-minus.line-heaght-40
+            %input.form-control.quantity-input{type: "text", value: order_item.quantity}
+            = link_to order_item_path(order_item, order_item: {quantity: order_item.quantity + 1, book_id: order_item.book_id}), method: :put, class: 'input-link' do
+              %i.fa.fa-plus.line-heaght-40
+        %td
+          %span.font-16.in-gold-500 
+            = I18n.t('.price_in_euro', price: order_item.total_price )
+        %td
+          = link_to order_item_path(order_item), method: :delete, class: 'close general-cart-close', 'aria-label': 'Close' do
+            %span{ 'aria-hidden': 'true' } &times;

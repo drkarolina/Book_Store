@@ -1,0 +1,11 @@
+%main.container.general-main-wrap
+  %h1.general-title-margin
+    = t('.cart')
+  = render 'carts/partials/mobile/ordered_books' 
+  = render 'carts/partials/ordered_books' 
+  .general-order-wrap
+    .row
+      = render 'carts/partials/coupon_form' 
+      = render 'carts/partials/order_summary' 
+  %button.btn.btn-default.mb-20.hidden-xs.center-block 
+    = t('.checkout')

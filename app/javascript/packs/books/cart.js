@@ -1,13 +1,9 @@
 $(document).on('click', '#plus', function (event) {
   event.preventDefault();
-  let max_quantity = $('.quantity-input').data("maxQuantity");
   quantity = +$('.quantity-input').val();
-
-  if ($('.quantity-input').val() < max_quantity) {
-    quantity = quantity + 1;
-    $('.quantity-input').val(quantity);  
-    newPrice(quantity);
-  }
+  quantity = quantity + 1;
+  $('.quantity-input').val(quantity);  
+  newPrice(quantity);
 });
 
 $(document).on('click', '#minus', function (event) {

@@ -16,16 +16,17 @@
       .col-xs-12.col-md-4
         %p.h1.in-gold-500.mt-10.total_price{ data: {price: @book.price}} 
           = @book.price_in_euro
-      .col-xs-5.col-md-3
-        .input-group.general-position
-          %a.input-link#minus{ href: '#' }
-            %i.fa.fa-minus.line-height-40
-          %input.form-control.quantity-input{ type: 'text', value: 1, data: {max_quantity: @book.quantity}  }
-          %a.input-link#plus{ href: '#' }
-            %i.fa.fa-plus.line-height-40
-      .col-xs-7.col-md-5
-        %button.btn.btn-default.pull-right.general-position
-          = t('.add_to_cart')
+      = simple_form_for(:order_item, url: order_items_path, method: :post) do |f|
+        .col-xs-5.col-md-3
+          .input-group.general-position
+            %a.input-link#minus{ href: '#' }
+              %i.fa.fa-minus.line-height-40
+            =f.text_field :quantity, value: 1, class: 'form-control quantity-input'
+            =f.hidden_field :book_id, value: @book.id
+            %a.input-link#plus{ href: '#' }
+              %i.fa.fa-plus.line-height-40
+        .col-xs-7.col-md-5
+          =f.button :submit, t('.add_to_cart'), class: 'button btn btn-default pull-right general-position'
     .general-info-wrap.divider-lg
       %p 
         = t('.description')

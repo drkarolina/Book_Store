@@ -1,0 +1,11 @@
+.col-sm-4
+  - if @order.coupon
+    %p.in-gold-500.font-18 
+      = t('.entered_coupon')
+  - else
+    %p.in-gold-500.font-18 
+      = t('.enter_coupon')
+    = simple_form_for(:coupon, url: coupon_path, method: :patch) do |f|
+      = f.input :code, class: 'form-control mb-30'
+      %div
+        = f.button :submit, t('.apply_coupon'), class: 'btn btn-primary'

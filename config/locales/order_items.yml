@@ -1,0 +1,5 @@
+en:
+  order_items:
+    create_item:
+      fail: Only %{quantity} copies of "%{title}" are in stock!
+      success: Book was successfully added to your cart!
