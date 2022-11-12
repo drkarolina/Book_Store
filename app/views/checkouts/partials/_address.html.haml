@@ -1,0 +1,37 @@
+= render 'checkouts/partials/steps'
+= simple_form_for(@presenter.billing_address, url: checkout_path(step: params[:step]), method: :put, class: 'res-mb-100') do |form|
+  .hidden-xs.hidden-sm
+    .row
+      .col-md-5
+        %h3.general-subtitle
+          = t('.billing_address')
+        %p.general-info-text
+          = t('.fields_required')
+      .col-md-5.col-md-offset-1
+        %h3.general-subtitle
+          = t('.shipping_address')
+  .row
+    .col-md-5.mb-40
+      .visible-xs.visible-sm
+        %h3.general-subtitle
+          = t('.billing_address')
+        %p.general-info-text
+          = t('.fields_required')
+      = form.simple_fields_for :billing_form, @presenter.billing_address do |f|
+        = render partial: 'settings/partials/forms/address_fields', locals: { form: f, address_type: :billing_address, errors: @presenter.billing_errors, countries: @presenter.countries }
+    .col-md-5.col-md-offset-1.mb-60
+      .visible-xs.visible-sm
+        %h3.general-subtitle
+          = t('.shipping_address')
+      = form.simple_fields_for :shipping_form, @presenter.shipping_address do |f|
+        = render partial: 'settings/partials/forms/address_fields', locals: { form: f, address_type: :shipping_address, errors: @presenter.shipping_errors, countries: @presenter.countries }
+      .form-group.checkbox
+        %label.checkbox-label
+          %input.checkbox-input{ type: 'checkbox', hidden: 'true', name: 'use_billing_address' }
+          %span.checkbox-icon
+            %i.fa.fa-check
+          %span.checkbox-text
+            = t('.use_billing')
+  .general-text-align.mb-60
+    = render partial: 'checkouts/partials/summary'
+    = form.button :submit, t('.save_and_continue'), class: 'center-block'

@@ -1,0 +1,31 @@
+%p.in-gold-500.font-18
+  = t('.order_summary')
+%table.general-summary-table
+  %tr
+    %td
+      %p.font-16
+        = t('.item_total')
+    %td
+      %p.font-16
+        = I18n.t('.price_in_euro', price: @order.total_price)
+  %tr
+    %td
+      %p.font-16
+        = t('.coupon')
+    %td
+      %p.font-16
+        = I18n.t('.price_in_euro_coupon', price: @order.coupon_discount)
+  %tr
+    %td
+      %p.font-16
+        = t('.Shipping')
+    %td
+      %p.font-16
+        = I18n.t('.price_in_euro', price: @order.coupon_discount)
+  %tr
+    %td
+      %strong.font-18
+        = t('.order_total')
+    %td
+      %strong.font-18
+        = I18n.t('.price_in_euro', price: @order.total_with_discount)

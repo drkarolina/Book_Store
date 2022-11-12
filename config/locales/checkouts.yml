@@ -1,5 +1,6 @@
 en:
-  checkout:
+  price_in_euro_coupon: '-€%{price}'
+  checkouts:
     partials:
       registration:
         returning_customer:
@@ -16,3 +17,14 @@ en:
           quick_register_info: You’ll be able to create password later
           email: Enter Email
           coninue_checkout: Continue to Checkout
+      summary:
+        item_total: 'Item Total:'
+        order_total: 'Order Total:'
+        coupon: 'Coupon:'
+        shipping: 'Shipping:'
+      address:
+        billing_address: Billing Address
+        shipping_address: Shipping Address
+        fields_required: all fields are required
+        use_billing: Use Billing Address
+        save_and_continue: Save and Continue
