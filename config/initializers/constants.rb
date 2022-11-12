@@ -37,4 +37,9 @@ module Constants
 
   COUPON_DEVIDER = 100
   DEFAULT_DISCOUNT = 0
+
+  MIN_DAYS = 1
+  MAX_DAYS = 100
+
+  MIN_PRICE = 0
 end
