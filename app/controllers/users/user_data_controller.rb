@@ -41,11 +41,11 @@ module Users
     def authenticate_user
       sign_up(resource_name, resource)
       resource.send_reset_password_instructions
-      redirect_to(checkout_index_path, notice: I18n.t('devise.passwords.send_instructions'))
+      redirect_to(checkouts_path(step: :address), notice: I18n.t('devise.passwords.send_instructions'))
     end
 
     def redirect_back_with_errors
-      redirect_back(fallback_location: checkout_index_path,
+      redirect_back(fallback_location: checkouts_path,
                     alert: resource.errors.full_messages_for(:email).to_sentence)
     end
   end

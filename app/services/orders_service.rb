@@ -2,9 +2,10 @@ class OrdersService
   attr_accessor :cookies
   attr_reader :user
 
-  def initialize(user, cookies)
+  def initialize(user, cookies, params)
     @user = user
     @cookies = cookies
+    @params = params
   end
 
   def call
@@ -23,6 +24,6 @@ class OrdersService
   end
 
   def order_find_by_status
-    @order_find_by_status ||= user.orders.find_by(status: Order.statuses.fetch(:unprocessed))
+    user.orders.find_by(status: Order.statuses.fetch(:unprocessed)) || user.orders.find_by(status: @params[:step])
   end
 end

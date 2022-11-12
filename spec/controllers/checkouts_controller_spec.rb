@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe CheckoutController, type: :controller do
+RSpec.describe CheckoutsController, type: :controller do
   describe 'GET /checkout' do
     context 'when user isn`t logged in' do
       before { get :index }
@@ -14,7 +14,7 @@ RSpec.describe CheckoutController, type: :controller do
 
       before do
         sign_in(user)
-        get :index
+        get :index, params: { step: :address }
       end
 
       it { expect(response).to have_http_status(:ok) }

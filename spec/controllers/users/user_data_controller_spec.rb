@@ -12,14 +12,14 @@ RSpec.describe Users::UserDataController, type: :controller do
       before { post :create, params: { user: { email: user.email, quick_register: true } } }
 
       it { expect(response).to have_http_status(:found) }
-      it { expect(response).to redirect_to(checkout_index_path) }
+      it { expect(response).to redirect_to(checkouts_path(step: :address)) }
     end
 
     context 'when checkout login without password fails' do
       before { post :create, params: { user: { email: '', quick_register: true } } }
 
       it { expect(response).to have_http_status(:found) }
-      it { expect(response).to redirect_to(checkout_index_path) }
+      it { expect(response).to redirect_to(checkouts_path) }
     end
   end
 end
