@@ -1,0 +1,50 @@
+= render 'checkouts/partials/steps'
+%h3.general-subtitle
+  = t('.credit_card')
+= simple_form_for(@presenter.card, url: checkout_path(step: params[:step]), method: :put, class: 'max-600 mb-80') do |f|
+  = f.input :number, wrapper_html: { class: ('has-error' if @presenter.card_errors&.messages&.key?(:number)) } do
+    = f.input_field :number, class: 'form-control'
+    - if @presenter.card_errors.present? && @presenter.card_errors.messages.key?(:number)
+      %span.help-block
+        = @presenter.card_errors.full_messages_for(:number).to_sentence
+  .row
+    .col-sm-6
+      = f.input :name, wrapper_html: { class: ('has-error' if @presenter.card_errors&.messages&.key?(:name)) } do
+        = f.input_field :name, class: 'form-control'
+        - if @presenter.card_errors.present? && @presenter.card_errors.messages.key?(:name)
+          %span.help-block
+            = @presenter.card_errors.full_messages_for(:name).to_sentence
+    .col-sm-3  
+      = f.input :month_year, wrapper_html: { class: ('has-error' if @presenter.card_errors&.messages&.key?(:month_year)) } do
+        = f.input_field :month_year, class: 'form-control'
+        - if @presenter.card_errors.present? && @presenter.card_errors.messages.key?(:month_year)
+          %span.help-block
+            = @presenter.card_errors.full_messages_for(:month_year).to_sentence
+    .col-sm-3
+      = f.input :cvv, wrapper_html: { class: ('has-error' if @presenter.card_errors&.messages&.key?(:cvv)) } do
+        = f.input_field :cvv, class: 'form-control'
+        - if @presenter.card_errors.present? && @presenter.card_errors.messages.key?(:cvv)
+          %span.help-block
+            = @presenter.card_errors.full_messages_for(:cvv).to_sentence
+  = render 'checkouts/partials/summary'
+  .text-center
+    = f.button :submit, t('.save_and_continue'), class: 'center-block'
+-# %form.max-600.mb-80
+-#   .form-group.has-error
+-#     %label.control-label.input-label{for: "cardNumber"} Card Number
+-#     %input#cardNumber.form-control{type: "number", name: "cardnumber", placeholder: "Card Number"}
+-#     %span.help-block Please enter a valid credit card number
+-#   .row
+-#     .col-sm-6
+-#       .form-group
+-#         %label.control-label.input-label{for: "cardName"} Name on Card
+-#         %input#cardName.form-control{type: "text", name: "ccname", placeholder: "Name on Card"}
+-#     .col-sm-3
+-#       .form-group
+-#         %label.control-label.input-label{for: "firstName"} MM / YY
+-#         %input#firstName.form-control{name: "exp-date", type: "text", placeholder: "MM / YY"}
+-#     .col-sm-3
+-#       .form-group.relative
+-#         %label.control-label.input-label{for: "firstName"} CVV
+-#         %input#firstName.form-control{name: "cvc", type: "number", placeholder: "CVV"}
+-#         %i.fa.fa-question-circle.general-form-help

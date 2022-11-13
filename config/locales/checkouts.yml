@@ -41,3 +41,10 @@ en:
             method: Method
             days: Days
             price: Price
+      payment:
+        credit_card: Credit Card
+        credit_number: Card Number
+        name_on_card: Name on Card
+        mm_yy: MM / YY
+        cvv: CVV
+        save_and_continue: Save and Continue
