@@ -1,0 +1,29 @@
+.visible-xs
+  -Delivery.all.each do |delivery|
+    .general-cart-item.divider-lg-bottom
+      %table.table
+        %tr
+          %td.col-half
+            %span.in-grey-600
+              = t('.method')
+          %td.col-half
+            .form-group.radio.mt-0.mb-0
+              %label.radio-label
+                = form.radio_button :delivery_id, delivery.id, name: :delivery_id, class: 'radio-input', hidden: true
+                %span.radio-icon
+                %span.radio-text
+                  = delivery.method_name
+        %tr
+          %td
+            %span.in-grey-600
+              = t('.days')
+          %td
+            %span.font-16.fw-300
+              = I18n.t('.delivery_days', min_days: delivery.min_days, max_days: delivery.max_days)
+        %tr
+          %td
+            %span.in-grey-600
+              = t('.price')
+          %td
+            %span.font-16.in-gold-500
+              = I18n.t('.price_in_euro', price: delivery.price)

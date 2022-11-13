@@ -15,13 +15,14 @@
     %td
       %p.font-16
         = I18n.t('.price_in_euro_coupon', price: @order.coupon_discount)
-  %tr
-    %td
-      %p.font-16
-        = t('.Shipping')
-    %td
-      %p.font-16
-        = I18n.t('.price_in_euro', price: @order.coupon_discount)
+  - if @order.delivery
+    %tr
+      %td
+        %p.font-16
+          = t('.Shipping')
+      %td
+        %p.font-16
+          = I18n.t('.price_in_euro', price: @order.delivery_price)
   %tr
     %td
       %strong.font-18

@@ -1,5 +1,6 @@
 en:
   price_in_euro_coupon: '-€%{price}'
+  delivery_days: '%{min_days} to %{max_days} days'
   checkouts:
     partials:
       registration:
@@ -28,3 +29,15 @@ en:
         fields_required: all fields are required
         use_billing: Use Billing Address
         save_and_continue: Save and Continue
+      delivery:
+        delivery: Delivery
+        save_and_continue: Save and Continue
+        deliveries:
+          deliveries:
+          method: Method
+          days: Days
+          price: Price
+          mobile:
+            method: Method
+            days: Days
+            price: Price

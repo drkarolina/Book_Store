@@ -23,11 +23,12 @@
       .visible-xs.visible-sm
         %h3.general-subtitle
           = t('.shipping_address')
-      = form.simple_fields_for :shipping_form, @presenter.shipping_address do |f|
-        = render partial: 'settings/partials/forms/address_fields', locals: { form: f, address_type: :shipping_address, errors: @presenter.shipping_errors, countries: @presenter.countries }
+      %div.shipping_address_form
+        = form.simple_fields_for :shipping_form, @presenter.shipping_address do |f|
+          = render partial: 'settings/partials/forms/address_fields', locals: { form: f, address_type: :shipping_address, errors: @presenter.shipping_errors, countries: @presenter.countries }
       .form-group.checkbox
         %label.checkbox-label
-          %input.checkbox-input{ type: 'checkbox', hidden: 'true', name: 'use_billing_address' }
+          %input.checkbox-input.use-billing-address{ type: 'checkbox', hidden: 'true', name: 'use_billing_address' }
           %span.checkbox-icon
             %i.fa.fa-check
           %span.checkbox-text
