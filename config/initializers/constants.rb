@@ -42,4 +42,6 @@ module Constants
   MAX_DAYS = 100
 
   MIN_PRICE = 0
+
+  DEFAULT_DELIVERY_PRICE = 0
 end

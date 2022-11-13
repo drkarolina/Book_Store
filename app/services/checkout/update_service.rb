@@ -3,7 +3,8 @@ module Checkout
     attr_reader :presenter
 
     SERVICES = {
-      address: Checkout::AddressService
+      address: Checkout::AddressService,
+      delivery: Checkout::DeliveryService
     }.freeze
 
     def initialize(params, user, order)
@@ -13,7 +14,7 @@ module Checkout
     end
 
     def call
-      service = SERVICES[@params[:step].to_sym].new(@params, @user)
+      service = SERVICES[@params[:step].to_sym].new(@params, @user, @order)
       return true if service.call
 
       @presenter = service.presenter
@@ -21,7 +22,7 @@ module Checkout
     end
 
     def next_step
-      switch_step
+      switch_step if @params[:step] == @order.status
       @order.status
     end
 
@@ -30,12 +31,12 @@ module Checkout
     def switch_step
       case @params[:step].to_sym
       when :address
-        @order.delivery!
+        @order.to_delivery!
       when :delivery
         @order.payment!
       when :payment
-        @order.confirm!
-      when :confirm
+        @order.confirmation!
+      when :confirmation
         @confirm.complete!
       end
     end

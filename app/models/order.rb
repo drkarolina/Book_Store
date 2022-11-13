@@ -20,7 +20,7 @@ class Order < ApplicationRecord
       transitions from: :unprocessed, to: :address
     end
 
-    event :delivery do
+    event :to_delivery do
       transitions from: :address, to: :delivery
     end
 

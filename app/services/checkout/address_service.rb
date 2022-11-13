@@ -1,6 +1,6 @@
 module Checkout
   class AddressService
-    def initialize(params, user)
+    def initialize(params, user, _order)
       @params = params
       @user = user
       @billing_form = AddressForm.new(@params[:address][:billing_form])

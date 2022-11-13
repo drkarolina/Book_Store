@@ -24,6 +24,7 @@ class OrdersService
   end
 
   def order_find_by_status
-    user.orders.find_by(status: Order.statuses.fetch(:unprocessed)) || user.orders.find_by(status: @params[:step])
+    user.orders.find_by(status: Order.statuses.fetch(:unprocessed)) ||
+      Order.includes(order_items: [:book]).where('status < ?', Order.statuses[:complete]).find_by(user: user)
   end
 end

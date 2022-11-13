@@ -1,7 +1,8 @@
 module Checkout
   class CheckoutService
     PRESENTERS = {
-      address: AddressPresenter
+      address: AddressPresenter,
+      delivery: DeliveryPresenter
     }.freeze
 
     def initialize(params, user, order)
