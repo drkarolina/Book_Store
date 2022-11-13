@@ -16,8 +16,16 @@ RSpec.describe Checkout::CheckoutService do
     context 'when state is delivery' do
       let(:params) { { step: :delivery } }
 
-      it 'returns AddressPresenter' do
+      it 'returns DeliveryPresenter' do
         expect(described_class.new(params, user, order).call.class).to be(DeliveryPresenter)
+      end
+    end
+
+    context 'when state is payment' do
+      let(:params) { { step: :payment } }
+
+      it 'returns CardPresenter' do
+        expect(described_class.new(params, user, order).call.class).to be(CardPresenter)
       end
     end
   end

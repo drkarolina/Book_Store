@@ -4,7 +4,8 @@ module Checkout
 
     SERVICES = {
       address: Checkout::AddressService,
-      delivery: Checkout::DeliveryService
+      delivery: Checkout::DeliveryService,
+      payment: Checkout::CardService
     }.freeze
 
     def initialize(params, user, order)

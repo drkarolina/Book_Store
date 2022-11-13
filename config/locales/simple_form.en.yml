@@ -19,6 +19,10 @@ en:
         current_password: "Old password"
         password: "Password"
         password_confirmation: "Confirm Password"
+        number: "Card Number"
+        name: "Name on Card"
+        month_year: "MM / YY"
+        cvv: "CVV"
     labels:
       defaults:
         first_name: "First Name"
@@ -28,3 +32,10 @@ en:
         current_password: "Old password"
         password: "Password"
         password_confirmation: "Confirm Password"
+        number: "Card Number"
+        name: "Name on Card"
+        month_year: "MM / YY"
+        cvv: "CVV"
+    hints:
+      cards:
+        cvv: 3-digit security code, usually found on the back of your card. American Express cards has 4-digit code, located on the front
