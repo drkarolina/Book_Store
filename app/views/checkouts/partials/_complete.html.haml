@@ -6,6 +6,6 @@
 = render 'checkouts/partials/complete/address_and_order_info'
 = render partial:'checkouts/partials/confirmation/mobile/books', locals: {order: @presenter.completed_order}
 = render partial:'checkouts/partials/confirmation/books', locals: {order: @presenter.completed_order}
-= render 'checkouts/partials/summary'
+= render partial:'checkouts/partials/summary', locals: { order: @presenter.completed_order }
 .text-center
   = link_to t('.back_to_store'), books_path, class: 'btn btn-default mb-20'

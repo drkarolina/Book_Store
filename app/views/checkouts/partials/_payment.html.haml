@@ -1,4 +1,3 @@
-= render 'checkouts/partials/steps'
 %h3.general-subtitle
   = t('.credit_card')
 = simple_form_for(@presenter.card, url: checkout_path(step: params[:step]), method: :put, class: 'max-600 mb-80') do |f|
@@ -26,25 +25,6 @@
         - if @presenter.card_errors.present? && @presenter.card_errors.messages.key?(:cvv)
           %span.help-block
             = @presenter.card_errors.full_messages_for(:cvv).to_sentence
-  = render 'checkouts/partials/summary'
+  = render partial:'checkouts/partials/summary', locals: { order: @order }
   .text-center
     = f.button :submit, t('.save_and_continue'), class: 'center-block'
--# %form.max-600.mb-80
--#   .form-group.has-error
--#     %label.control-label.input-label{for: "cardNumber"} Card Number
--#     %input#cardNumber.form-control{type: "number", name: "cardnumber", placeholder: "Card Number"}
--#     %span.help-block Please enter a valid credit card number
--#   .row
--#     .col-sm-6
--#       .form-group
--#         %label.control-label.input-label{for: "cardName"} Name on Card
--#         %input#cardName.form-control{type: "text", name: "ccname", placeholder: "Name on Card"}
--#     .col-sm-3
--#       .form-group
--#         %label.control-label.input-label{for: "firstName"} MM / YY
--#         %input#firstName.form-control{name: "exp-date", type: "text", placeholder: "MM / YY"}
--#     .col-sm-3
--#       .form-group.relative
--#         %label.control-label.input-label{for: "firstName"} CVV
--#         %input#firstName.form-control{name: "cvc", type: "number", placeholder: "CVV"}
--#         %i.fa.fa-question-circle.general-form-help
