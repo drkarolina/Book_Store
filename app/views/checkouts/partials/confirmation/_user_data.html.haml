@@ -1,0 +1,47 @@
+.row.mb-20
+  .col-sm-3
+    %h3.general-subtitle
+      = t('.shipping_address')
+    %p.general-address
+      = I18n.t('.name', first_name: current_user.shipping_address.first_name, last_name: current_user.shipping_address.last_name) 
+      %span 
+        = link_to t('.edit'), checkouts_path( step: :address ), class: 'general-edit'
+      %br
+      = current_user.shipping_address.address
+      %br
+      = I18n.t('.city_address', city: current_user.shipping_address.city, zip: current_user.shipping_address.zip) 
+      %br
+      = current_user.shipping_address.country
+      %br
+      = I18n.t('.phone', phone: current_user.shipping_address.phone) 
+  .col-sm-3
+    %h3.general-subtitle
+      = t('.billing_address')
+    %p.general-address
+      = I18n.t('.name', first_name: current_user.billing_address.first_name, last_name: current_user.billing_address.last_name) 
+      %span
+        = link_to t('.edit'), checkouts_path( step: :address ), class: 'general-edit'
+      %br
+      = current_user.billing_address.address
+      %br
+      = I18n.t('.city_address', city: current_user.billing_address.city, zip: current_user.billing_address.zip) 
+      %br
+      = current_user.billing_address.country
+      %br
+      = I18n.t('.phone', phone: current_user.billing_address.phone) 
+  .col-sm-3
+    %h3.general-subtitle
+      = t('.shipments')
+    %p.general-address
+      = @order.delivery.method_name
+      %span
+        = link_to t('.edit'), checkouts_path( step: :delivery ), class: 'general-edit'
+  .col-sm-3
+    %h3.general-subtitle
+      = t('.payment_information')
+    %p.general-address
+      = @order.card.hidden_card_number
+      %span
+        = link_to t('.edit'), checkouts_path( step: :payment ), class: 'general-edit'
+      %br
+      = @order.card.month_year

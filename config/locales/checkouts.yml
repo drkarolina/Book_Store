@@ -1,6 +1,11 @@
 en:
+  confirmation_letter: 'An order confirmation has been has been sent to %{email}'
   price_in_euro_coupon: '-€%{price}'
   delivery_days: '%{min_days} to %{max_days} days'
+  name: '%{first_name} %{last_name}'
+  city_address: '%{city} %{zip}'
+  phone: 'Phone %{phone}'
+  order_number: 'Order #%{number}'
   checkouts:
     partials:
       registration:
@@ -48,3 +53,27 @@ en:
         mm_yy: MM / YY
         cvv: CVV
         save_and_continue: Save and Continue
+      confirmation:
+        place_order: Place Order
+        user_data:
+          billing_address: Billing Address
+          shipping_address: Shipping Address
+          shipments: Shipments
+          payment_information: Payment Information
+          edit: edit
+        books:
+          book: Book
+          price: Price
+          quantity: Quantity
+          total: Total
+        mobile:
+          books:
+            price: Price
+            quantity: Quantity
+            total: Total
+      complete:
+        thanks: Thank You for your Order!
+        back_to_store: Back to Store
+        address_and_order_info:
+
+

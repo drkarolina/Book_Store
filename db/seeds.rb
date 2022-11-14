@@ -57,6 +57,6 @@ if User.count.zero?
 end
 
 if Delivery.count.zero?
-  Delivery.create!(method_name: 'Delivery Next Day!', min_days: 3, max_days: 7, price: 28.5)
-  Delivery.create!(method_name: 'Delivery In A Week!', min_days: 5, max_days: 7, price: 18)
+  Delivery.create!(method_name: 'By plane', min_days: 3, max_days: 7, price: 28.5)
+  Delivery.create!(method_name: 'By train', min_days: 5, max_days: 7, price: 18)
 end

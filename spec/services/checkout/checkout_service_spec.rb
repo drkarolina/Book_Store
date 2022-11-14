@@ -28,5 +28,13 @@ RSpec.describe Checkout::CheckoutService do
         expect(described_class.new(params, user, order).call.class).to be(CardPresenter)
       end
     end
+
+    context 'when state is confirmation' do
+      let(:params) { { step: :confirmation } }
+
+      it 'returns CardPresenter' do
+        expect(described_class.new(params, user, order).call.class).to be(ConfirmationPresenter)
+      end
+    end
   end
 end

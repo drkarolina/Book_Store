@@ -1,6 +1,7 @@
 class OrderDecorator < ApplicationDecorator
   delegate_all
   decorates_association :order_items
+  decorates_association :card
 
   def total_price
     order_items.sum(&:total_price).round(2)
@@ -16,5 +17,9 @@ class OrderDecorator < ApplicationDecorator
 
   def delivery_price
     delivery ? delivery.price : Constants::DEFAULT_DELIVERY_PRICE
+  end
+
+  def creation_date
+    created_at.strftime('%B %d, %Y')
   end
 end

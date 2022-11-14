@@ -5,7 +5,8 @@ module Checkout
     SERVICES = {
       address: Checkout::AddressService,
       delivery: Checkout::DeliveryService,
-      payment: Checkout::CardService
+      payment: Checkout::CardService,
+      confirmation: Checkout::ConfirmService
     }.freeze
 
     def initialize(params, user, order)
@@ -38,7 +39,7 @@ module Checkout
       when :payment
         @order.confirmation!
       when :confirmation
-        @confirm.complete!
+        @order.complete!
       end
     end
   end

@@ -34,4 +34,8 @@ RSpec.describe 'OrderDecorator' do
   describe 'OrderDecorator#delivery_price' do
     it { expect(order.delivery_price).to eq(order.delivery.price) }
   end
+
+  describe 'OrderDecorator#creation_date' do
+    it { expect(order.creation_date).to eq(order.created_at.strftime('%B %d, %Y')) }
+  end
 end
