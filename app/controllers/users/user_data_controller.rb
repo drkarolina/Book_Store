@@ -40,6 +40,7 @@ module Users
 
     def authenticate_user
       sign_up(resource_name, resource)
+      MargeOrderItemsService.new(current_user, params).call
       resource.send_reset_password_instructions
       redirect_to(checkouts_path(step: :address), notice: I18n.t('devise.passwords.send_instructions'))
     end

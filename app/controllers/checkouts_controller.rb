@@ -16,5 +16,7 @@ class CheckoutsController < ApplicationController
     render :index
   end
 
-  def checkout_login; end
+  def checkout_login
+    @order = current_order
+  end
 end

@@ -13,6 +13,7 @@ module Users
 
     def successful_response(resource)
       sign_in(resource_name, resource)
+      MargeOrderItemsService.new(current_user, params).call
       redirect_to(checkouts_path(step: :address), notice: I18n.t('devise.sessions.signed_in'))
     end
 
