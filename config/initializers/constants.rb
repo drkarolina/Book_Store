@@ -51,19 +51,4 @@ module Constants
   VALIDATE_CVV = /\A[0-9]{3,4}\z/
 
   HIDDEN_NUMBER = '*'
-
-  SERVICES = {
-    address: Checkout::AddressService,
-    delivery: Checkout::DeliveryService,
-    payment: Checkout::CardService,
-    confirmation: Checkout::ConfirmService
-  }.freeze
-
-  PRESENTERS = {
-    address: AddressPresenter,
-    delivery: DeliveryPresenter,
-    payment: CardPresenter,
-    confirmation: ConfirmationPresenter,
-    complete: CompletePresenter
-  }.freeze 
 end

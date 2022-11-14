@@ -2,6 +2,13 @@ module Checkout
   class UpdateService
     attr_reader :presenter
 
+    SERVICES = {
+      address: Checkout::AddressService,
+      delivery: Checkout::DeliveryService,
+      payment: Checkout::CardService,
+      confirmation: Checkout::ConfirmService
+    }.freeze
+
     def initialize(params, user, order)
       @params = params
       @user = user
@@ -9,7 +16,7 @@ module Checkout
     end
 
     def call
-      service = Constants::SERVICES[@params[:step].to_sym].new(@params, @user, @order)
+      service = SERVICES[@params[:step].to_sym].new(@params, @user, @order)
       return true if service.call
 
       @presenter = service.presenter
