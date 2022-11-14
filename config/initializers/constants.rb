@@ -49,4 +49,21 @@ module Constants
   VALIDATE_NAME_ON_CARD = /\A[a-zA-Z]{1,50}\z/
   VALIDATE_MMVV = %r{\A(0[1-9]|1[0-2])/([0-9]{2})\z}
   VALIDATE_CVV = /\A[0-9]{3,4}\z/
+
+  HIDDEN_NUMBER = '*'
+
+  SERVICES = {
+    address: Checkout::AddressService,
+    delivery: Checkout::DeliveryService,
+    payment: Checkout::CardService,
+    confirmation: Checkout::ConfirmService
+  }.freeze
+
+  PRESENTERS = {
+    address: AddressPresenter,
+    delivery: DeliveryPresenter,
+    payment: CardPresenter,
+    confirmation: ConfirmationPresenter,
+    complete: CompletePresenter
+  }.freeze 
 end
