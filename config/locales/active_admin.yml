@@ -45,3 +45,9 @@ en:
       discount: Discount
       is_valid: Is Valid
       order_id: Order
+  delivery:
+    field:
+      method_name: Method
+      min_days: Min Days
+      max_days: Max Days
+      price: Price

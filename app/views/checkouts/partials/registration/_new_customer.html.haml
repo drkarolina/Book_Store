@@ -15,4 +15,5 @@
       = f.label :email, t('.email')
       = f.input :email, required: true, autofocus: true, label: false, placeholder: t('.email'), input_html: { autocomplete: :on }
       = f.hidden_field :quick_register, value: true
+      = f.hidden_field :order_id, value: @order.id
     = f.button :submit, t('.coninue_checkout')

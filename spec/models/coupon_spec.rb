@@ -23,7 +23,7 @@ RSpec.describe Coupon, type: :model do
     end
 
     context 'when validation doesn`t pass' do
-      it 'is valid with valid attributes' do
+      it 'is not valid with valid attributes' do
         expect(described_class.create(discount: 10)).not_to be_valid
       end
     end

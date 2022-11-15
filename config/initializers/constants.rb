@@ -37,4 +37,18 @@ module Constants
 
   COUPON_DEVIDER = 100
   DEFAULT_DISCOUNT = 0
+
+  MIN_DAYS = 1
+  MAX_DAYS = 100
+
+  MIN_PRICE = 0
+
+  DEFAULT_DELIVERY_PRICE = 0
+
+  VALIDATE_CARD_NUMBER = /\A[0-9]{16}\z/
+  VALIDATE_NAME_ON_CARD = /\A[a-zA-Z]{1,50}\z/
+  VALIDATE_MMVV = %r{\A(0[1-9]|1[0-2])/([0-9]{2})\z}
+  VALIDATE_CVV = /\A[0-9]{3,4}\z/
+
+  HIDDEN_NUMBER = '*'
 end

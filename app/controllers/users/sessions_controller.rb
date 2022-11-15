@@ -13,11 +13,12 @@ module Users
 
     def successful_response(resource)
       sign_in(resource_name, resource)
-      redirect_to(checkout_index_path, notice: I18n.t('devise.sessions.signed_in'))
+      MargeOrderItemsService.new(current_user, params).call
+      redirect_to(checkouts_path(step: :address), notice: I18n.t('devise.sessions.signed_in'))
     end
 
     def fail_response
-      redirect_to(checkout_index_path, alert: I18n.t('devise.errors.custom_login_failure'))
+      redirect_to(checkouts_path, alert: I18n.t('devise.errors.custom_login_failure'))
     end
   end
 end

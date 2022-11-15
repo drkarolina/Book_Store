@@ -25,14 +25,14 @@ RSpec.describe Users::SessionsController, type: :controller do
       before { post :create, params: { user: { email: user.email, password: user.password, checkout_login: true } } }
 
       it { expect(response).to have_http_status(:found) }
-      it { expect(response).to redirect_to(checkout_index_path) }
+      it { expect(response).to redirect_to(checkouts_path(step: :address)) }
     end
 
     context 'when checkout login fails' do
       before { post :create, params: { user: { email: user.email, password: '', checkout_login: true } } }
 
       it { expect(response).to have_http_status(:found) }
-      it { expect(response).to redirect_to(checkout_index_path) }
+      it { expect(response).to redirect_to(checkouts_path) }
     end
   end
 end

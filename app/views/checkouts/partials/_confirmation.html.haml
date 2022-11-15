@@ -1,0 +1,6 @@
+= render 'checkouts/partials/confirmation/user_data'
+= render partial:'checkouts/partials/confirmation/mobile/books', locals: {order: @order}
+= render partial:'checkouts/partials/confirmation/books', locals: {order: @order}
+= render partial:'checkouts/partials/summary', locals: { order: @order }
+.text-center
+   = link_to t('.place_order'), checkout_path( step: :confirmation ), method: :put, class: 'btn btn-default mb-20 hidden-xs'

@@ -7,7 +7,9 @@
     .row
       = render 'carts/partials/coupon_form' 
       = render 'carts/partials/order_summary' 
+    - if @order.order_items.count > 0
+      .text-center
+        = link_to t('.checkout'), checkouts_path( step: :address ), class: 'btn btn-default mb-20 visible-xs'
+  - if @order.order_items.count > 0
     .text-center
-      = link_to t('.checkout'), checkout_index_path, class: 'btn btn-default mb-20 visible-xs'
-  .text-center
-    = link_to t('.checkout'), checkout_index_path, class: 'btn btn-default mb-20 hidden-xs'
+      = link_to t('.checkout'), checkouts_path( step: :address ), class: 'btn btn-default mb-20 hidden-xs'

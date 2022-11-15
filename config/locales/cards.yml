@@ -1,0 +1,7 @@
+en:
+  cards:
+    validation:
+      number: must have 16 digits only
+      name: must consist of only a-z and A-Z characters without special symbols
+      mm_yy: must have format mm/yy
+      cvv: must have 3 digits only

@@ -7,7 +7,8 @@ RSpec.describe 'OrderDecorator' do
   let(:order) { order_build.decorate }
 
   before do
-    OrderItem.create(quantity: 2, book_id: Book.find(1), order: order_build)
+    OrderItem.create(quantity: 2, book_id: Book.all.first, order: order_build)
+    order.update(delivery: Delivery.all.first)
   end
 
   describe 'OrderDecorator#total_price' do
@@ -23,6 +24,18 @@ RSpec.describe 'OrderDecorator' do
   end
 
   describe 'OrderDecorator#total_with_discount' do
-    it { expect(order.total_with_discount).to eq((order.total_price - order.coupon_discount).round(2)) }
+    let(:result) { (order.total_price - order.coupon_discount + order.delivery_price).round(2) }
+
+    it {
+      expect(order.total_with_discount).to eq(result)
+    }
+  end
+
+  describe 'OrderDecorator#delivery_price' do
+    it { expect(order.delivery_price).to eq(order.delivery.price) }
+  end
+
+  describe 'OrderDecorator#creation_date' do
+    it { expect(order.creation_date).to eq(order.created_at.strftime('%B %d, %Y')) }
   end
 end

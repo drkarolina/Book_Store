@@ -46,7 +46,17 @@ if Book.count.zero?
   end
 end
 
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
-user = User.new(email: 'user@example.com', password: '123123Qq', password_confirmation: '123123Qq')
-user.skip_confirmation!
-user.save!
+if AdminUser.count.zero?
+  AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+end
+
+if User.count.zero?
+  user = User.new(email: 'user@example.com', password: '123123Qq', password_confirmation: '123123Qq')
+  user.skip_confirmation!
+  user.save!
+end
+
+if Delivery.count.zero?
+  Delivery.create!(method_name: 'By plane', min_days: 3, max_days: 7, price: 28.5)
+  Delivery.create!(method_name: 'By train', min_days: 5, max_days: 7, price: 18)
+end

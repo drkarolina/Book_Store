@@ -15,5 +15,6 @@
       = f.label :password, t('.password')
       = f.input :password, required: true, autofocus: true, label: false, placeholder: t('.password'), input_html: { autocomplete: :on }
       = f.hidden_field :checkout_login, value: true
+      = f.hidden_field :order_id, value: @order.id
       = link_to t('.forgot_password'), new_password_path(:user), class: 'help-block in-gold-500'
     = f.button :submit, t('.log_in')
