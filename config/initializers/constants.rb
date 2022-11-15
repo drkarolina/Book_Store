@@ -54,4 +54,6 @@ module Constants
 
   NUMBER_OF_NEWEST_BOOKS = 3
 
+  NUMBER_OF_BEST_SELLERS = 4
+
 end
