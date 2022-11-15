@@ -51,4 +51,7 @@ module Constants
   VALIDATE_CVV = /\A[0-9]{3,4}\z/
 
   HIDDEN_NUMBER = '*'
+
+  NUMBER_OF_NEWEST_BOOKS = 3
+
 end

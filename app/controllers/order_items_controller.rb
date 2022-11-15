@@ -6,7 +6,7 @@ class OrderItemsController < ApplicationController
   end
 
   def update
-    redirect_back fallback_location: carts_path
+    redirect_back fallback_location: params[:index] ? root_path : carts_path
   end
 
   def destroy
