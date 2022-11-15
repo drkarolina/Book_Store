@@ -5,6 +5,7 @@ en:
     in_delivery: In Delivery
     delivered: Delivered
     canceled: Canceled
+    all: All
     index:
       my_orders: My Orders
     show:
