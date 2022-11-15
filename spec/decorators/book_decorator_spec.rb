@@ -11,10 +11,6 @@ RSpec.describe 'BookDecorator' do
     it { expect(books[0].authors_full_name).to eq(authors) }
   end
 
-  describe 'BooksController#price_in_euro' do
-    it { expect(books[0].price_in_euro).to eq("€#{books[0].price}") }
-  end
-
   describe 'BooksController#dimensions' do
     it { expect(books[0].dimensions).to eq("H: #{books[0].height}\" x W: #{books[0].width}\" x D: #{books[0].depth}") }
   end
