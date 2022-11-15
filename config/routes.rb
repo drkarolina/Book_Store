@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   resources :carts, only: %i[index]
   resource :coupon, only: %i[update]
   resources :checkouts, param: :step, only: %i[index update]
+  resources :orders, only: %i[index show]
   get '/checkout_login', to: 'checkouts#checkout_login'
 end

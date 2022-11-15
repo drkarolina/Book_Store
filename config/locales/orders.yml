@@ -1,0 +1,37 @@
+en:
+  orders:
+    complete: Waiting for processing
+    in_queue: In Queue
+    in_delivery: In Delivery
+    delivered: Delivered
+    canceled: Canceled
+    index:
+      my_orders: My Orders
+    show:
+      back_to_orders: Back to Orders
+    partials:
+      orders:
+        number: Number
+        completed_at: Completed at
+        status: Status
+        total: Total
+      filtering:
+        filter_by: Filter By
+      addresses:
+        billing_address: Billing Address
+        shipping_address: Shipping Address
+      shipment:
+        shipments: Shipments
+      card:
+        payment_information: Payment Information
+      order_items:
+        book: Book
+        price: Price
+        quantity: Quantity
+        total: Total
+      mobile:
+        orders:
+          number: Number
+          completed_at: Completed at
+          status: Status
+          total: Total

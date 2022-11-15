@@ -38,7 +38,7 @@
                 = t('.my_account')
               %ul#menu_account.collapse.list-unstyled.pl-30.mb-10{'aria-expanded': "false"}
                 %li
-                  %a.collapse-link{href: '#'}
+                  %a.collapse-link{href: orders_url}
                     = t('.orders')
                 %li
                   %a.collapse-link{href: settings_url}
@@ -70,7 +70,7 @@
                 = t('.my_account')
               %ul.dropdown-menu
                 %li
-                  %a{href: '#'}
+                  %a{href: orders_url}
                     = t('.orders')
                 %li
                   %a{href: settings_url}

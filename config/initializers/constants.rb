@@ -56,4 +56,6 @@ module Constants
 
   NUMBER_OF_BEST_SELLERS = 4
 
+  FILTER_BY = %i[complete in_queue in_delivery delivered canceled]
+
 end

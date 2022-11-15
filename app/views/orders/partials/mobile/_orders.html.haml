@@ -1,0 +1,32 @@
+.visible-xs
+  - @orders.each do |order|
+    .general-cart-item.divider-lg-bottom.pt-0
+      %table.table
+        %tr
+          %td.col-half
+            %span.in-grey-600
+              = t('.number')
+          %td.col-half
+            %span.general-order-number
+              = order.number
+        %tr
+          %td
+            %span.in-grey-600
+              = t('.completed_at')
+          %td
+            %span.in-grey-900.font-16.fw-300
+              = order.updated_at.strftime('%Y-%m-%d')
+        %tr
+          %td
+            %span.in-grey-600
+              = t('.status')
+          %td
+            %span.font-16.in-grey-900.fw-300
+              = t("orders.#{order.status}")
+        %tr
+          %td
+            %span.in-grey-600
+              = t('.total')
+          %td
+            %strong.font-16
+              = I18n.t('.price_in_euro', price: order.total_price)

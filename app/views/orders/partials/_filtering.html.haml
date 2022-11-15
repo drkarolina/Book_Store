@@ -1,0 +1,13 @@
+%p.lead.small.mb-10.visible-xs
+  = t('filter_by')
+.dropdowns.dropdown.general-order-dropdown
+  %a.dropdown-toggle.lead.small{href: "#", 'data-toggle': "dropdown", role: "button", 'aria-haspopup': "true", 'aria-expanded': "false"}
+    - if params[:filter_by]
+      = t("orders.#{params[:filter_by]}")
+    - else
+      = t("orders.complete")
+    %i.fa.fa-angle-down.dropdown-icon.pull-right
+  %ul.dropdown-menu
+    - Constants::FILTER_BY.each do |filter| 
+      %li
+        = link_to t("orders.#{filter}"), orders_path(filter_by: filter)
