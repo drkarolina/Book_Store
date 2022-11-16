@@ -1,4 +1,9 @@
 en:
+  links:
+    in_delivery: In Delivery
+    in_queue: In Queue
+    delivered: Delivered
+    canceled: Canceled
   author:
     field:
       first_name: First name
@@ -51,3 +56,9 @@ en:
       min_days: Min Days
       max_days: Max Days
       price: Price
+  order:
+    field:
+      number: number
+      creation_date: Date of Creation
+      status: Status
+      user: User

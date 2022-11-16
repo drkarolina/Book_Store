@@ -15,7 +15,7 @@
     .row
       .col-xs-12.col-md-4
         %p.h1.in-gold-500.mt-10.total_price{ data: {price: @book.price}} 
-          = @book.price_in_euro
+          = I18n.t('.price_in_euro', price: @book.price)
       = simple_form_for(:order_item, url: order_items_path, method: :post) do |f|
         .col-xs-5.col-md-3
           .input-group.general-position

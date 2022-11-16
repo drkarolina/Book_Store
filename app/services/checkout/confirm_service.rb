@@ -15,7 +15,7 @@ module Checkout
     private
 
     def generate_order_number
-      "R #{Array.new(8) { rand(0..9) }.join}"
+      "R#{Array.new(8) { rand(0..9) }.join}"
     end
   end
 end
