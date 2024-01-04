@@ -1,0 +1,23 @@
+.mb-120
+  - @books.each_slice(4).each do |books_group|
+    .row.books_row
+      - books_group.each do |book|
+        .col-xs-6.col-sm-3
+          .general-thumb-wrap
+            .thumbnail.general-thumbnail
+              = image_tag(book.preview_image, alt: book.title, class: 'general-thumbnail-img img-shadow')
+              .thumb-hover
+                .general-thumb-link-wrap
+                  = link_to book_path(book), class: 'thumb-hover-link' do
+                    .fa.fa-eye.thumb-icon{'aria-hidden': "true"}
+                  = link_to order_items_path(order_item: {quantity: Constants::MIN_BOOK_QUANTITY, book_id: book.id}), method: :post, class: 'thumb-hover-link' do
+                    %i.fa.fa-shopping-cart.thumb-icon
+          .general-thumb-info
+            %p.title
+              = book.title
+            %p.font-16.in-gold-500
+              = I18n.t('.price_in_euro', price: book.price)
+            %span.divider-sm
+            %p.lead.small
+              = book.authors_full_name 
+  = render partial: 'books/partials/view_more'

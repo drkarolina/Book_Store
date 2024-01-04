@@ -1,0 +1,11 @@
+.text-center.mb-40
+  %h3.general-subtitle 
+    = t('.thanks')
+  %p.fw-300 
+    = I18n.t('.confirmation_letter', email: current_user.email)
+= render 'checkouts/partials/complete/address_and_order_info'
+= render partial:'checkouts/partials/confirmation/mobile/books', locals: {order: @presenter.completed_order}
+= render partial:'checkouts/partials/confirmation/books', locals: {order: @presenter.completed_order}
+= render partial:'checkouts/partials/summary', locals: { order: @presenter.completed_order }
+.text-center
+  = link_to t('.back_to_store'), books_path, class: 'btn btn-default mb-20'

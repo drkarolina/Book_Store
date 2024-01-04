@@ -1,0 +1,22 @@
+.row.mb-20
+  .col-sm-6
+    .visible-xs
+      %p.general-order-number.mb-0
+        = I18n.t('.order_number', number: @presenter.completed_order.number)
+      %p.general-address.mb-30
+        = @presenter.completed_order.creation_date
+    %p.general-address
+      = I18n.t('.name', first_name: current_user.shipping_address.first_name, last_name: current_user.shipping_address.last_name)
+      %br
+      = current_user.shipping_address.address
+      %br
+      = I18n.t('.city_address', city: current_user.shipping_address.city, zip: current_user.shipping_address.zip) 
+      %br
+      = current_user.shipping_address.country
+      %br
+      = I18n.t('.phone', phone: current_user.shipping_address.phone) 
+  .col-sm-6.hidden-xs.text-right
+    %p.general-order-number.mb-0
+      = I18n.t('.order_number', number: @presenter.completed_order.number)
+    %p.general-address.mb-30 
+      = @presenter.completed_order.creation_date

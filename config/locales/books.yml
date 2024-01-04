@@ -1,0 +1,33 @@
+en:
+  books:
+    index:
+      catalog: Catalog
+    partials:
+      order_options:
+        sort_by: Sort by
+        all: All
+        options:
+          title_asc: 'Title: A - Z'
+          title_desc: 'Title: Z - A'
+          newest: Newest first
+          price_asc: 'Price: Low to hight'
+          price_desc: 'Price: Hight to low'
+      book:
+        description: Description
+        read_more: Read More
+        year_of_publication: Year of publication
+        dimensions: Dimensions
+        materials: Materials
+        add_to_cart: Add to Cart
+      review_form:
+        write_review: Write a Review
+        score: Score
+        title: Title
+        review: Review
+        post: Post
+        invalid_title: Should not be not empty, consist of a-z, A-Z, 0-9, or one of !#$%&'*+-/=?^_`{|}~. and must be less than 80 characters.
+        invalid_text: Should not be not empty, consist of a-z, A-Z, 0-9, or one of !#$%&'*+-/=?^_`{|}~. and must be less than 80 characters.
+      reviews:
+        reviews_number: 'Reviews (%{number})'
+        creation_date: '%d/%m/%y'
+      view_more: View more

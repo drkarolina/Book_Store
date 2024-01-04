@@ -1,0 +1,22 @@
+en:
+  layouts:
+    application:
+      app_name: Book Store
+    partials:
+      header:
+        brand: Book Store
+        home: Home
+        shop: Shop
+        log_out: Log out
+        log_in: Log in
+        sign_up: Sign Up
+        my_account: My account
+        orders: Orders
+        settings: Settings
+      footer:
+        home: Home
+        shop: Shop
+        orders: Orders
+        settings: Settings
+        email: support@book_store-rg.com
+        phone: (555)-555-5555

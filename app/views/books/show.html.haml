@@ -1,0 +1,8 @@
+%main.container
+  %a.general-back-link{href: "#"}
+    %i.fa.fa-long-arrow-left.mr-15
+    = link_to t('.link.back_to_results'), url_for(:back), class: 'general-back-link'
+  = render partial: 'books/partials/book'
+  - if user_signed_in?
+    = render partial: 'books/partials/review_form', locals: { form: @review_form }
+  = render partial: 'books/partials/reviews'

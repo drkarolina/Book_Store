@@ -1,0 +1,46 @@
+#slider.carousel.slide{'data-ride': "carousel"}
+  %ol.carousel-indicators
+    %li.active{'data-target': "#slider", 'data-slide-to': "0"}
+    %li{'data-target': "#slider", 'data-slide-to': "1"}
+  .carousel-inner{role: "listbox"}
+    .item.active
+      .row
+        .col-sm-5
+          .general-img-wrap
+            = link_to book_path(@newest_books.first) do
+              = image_tag(@newest_books.first.preview_image, alt: @newest_books.first.title, class: 'general-thumbnail-img img-shadow')
+        .col-sm-7
+          .mb-60
+            %h1
+              = @newest_books.first.title
+            %p.lead 
+              = @newest_books.first.short_description
+            %p.lead.small 
+              = @newest_books.first.authors_full_name
+            .general-align
+              = link_to t('.button.buy_now'), order_items_path(order_item: {quantity: Constants::MIN_BOOK_QUANTITY, book_id: @newest_books.first.id}, index: true), method: :post, class: 'btn btn-default'
+    - @newest_books.last(Constants::NUMBER_OF_NEWEST_BOOKS - 1).each do |book|
+      .item
+        .row
+          .col-sm-5
+            .general-img-wrap
+              = link_to book_path(book) do
+                = image_tag(book.preview_image, alt: book.title, class: 'general-thumbnail-img img-shadow')
+          .col-sm-7
+            .mb-60
+              %h1
+                = book.title
+              %p.lead 
+                = book.short_description
+              %p.lead.small 
+                = book.authors_full_name
+              .general-align
+                = link_to t('.button.buy_now'), order_items_path(order_item: {quantity: Constants::MIN_BOOK_QUANTITY, book_id: book.id}, index: true), method: :post, class: 'btn btn-default'
+  %a.left.carousel-control{href: "#slider", role: "button", 'data-slide': "prev"}
+    %span.icon-prev{'aria-hidden': "true"}
+    %span.sr-only
+      = t('.button.prev')
+  %a.right.carousel-control{href: "#slider", role: "button", 'data-slide': "next"}
+    %span.icon-next{'aria-hidden': "true"}
+    %span.sr-only
+      = t('.button.next')

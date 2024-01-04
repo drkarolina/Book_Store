@@ -1,0 +1,9 @@
+%h3.general-subtitle 
+  = t('.delivery')
+= simple_form_for(:delivery, url: checkout_path(step: params[:step]), method: :put) do |form|
+  = render partial: 'checkouts/partials/deliveries/mobile/deliveries', locals: { form: form }
+  = render partial: 'checkouts/partials/deliveries/deliveries', locals: { form: form }
+  .general-text-align
+    = render partial:'checkouts/partials/summary', locals: { order: @order }
+  .text-center
+    = form.button :submit, t('.save_and_continue'), class: 'center-block'

@@ -1,0 +1,12 @@
+%main.container.general-main-wrap
+  %h1.general-title-margin
+    = I18n.t('.order_number', number: @order.number)
+  .row.mb-20
+    = render 'orders/partials/addresses'
+    = render 'orders/partials/shipment'
+    = render 'orders/partials/card'
+  = render partial:'checkouts/partials/confirmation/books', locals: {order: @order}
+  = render partial:'checkouts/partials/confirmation/mobile/books', locals: {order: @order}
+  = render partial:'checkouts/partials/summary', locals: {order: @order}
+  .text-center
+    = link_to t('.back_to_orders'), orders_path, class: 'btn btn-default'

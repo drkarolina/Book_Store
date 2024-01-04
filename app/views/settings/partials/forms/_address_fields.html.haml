@@ -1,0 +1,8 @@
+= form.hidden_field :address_type, value: address_type
+- %i[first_name last_name address city zip].each do |field|
+  = form.input field, wrapper_html: { class: ('has-error' if errors&.messages&.key?(field)) } do
+    = render partial: 'settings/partials/forms/address_inputs', locals: { field: field, collection: nil, errors: errors, form: form }
+= form.input :country, prompt: t('.country'), wrapper_html: { class: ('has-error' if errors&.messages&.key?(:country)) } do
+  = render partial: 'settings/partials/forms/address_inputs', locals: { field: :country, collection: countries, errors: errors, form: form }
+= form.input :phone, wrapper_html: { class: ('has-error' if errors&.messages&.key?(:phone)) } do
+  = render partial: 'settings/partials/forms/address_inputs', locals: { field: :phone, collection: nil, errors: errors, form: form }

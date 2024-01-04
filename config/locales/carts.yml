@@ -1,0 +1,22 @@
+en:
+  price_in_euro: '€%{price}'
+  carts:
+    index:
+      cart: Cart
+      checkout: Checkout
+    partials:
+      ordered_books:
+        product: Product
+        price: Price
+        quantity: Quantity
+        subtotal: Subtotal
+      coupon_form:
+        enter_coupon: Enter Your Coupon Code
+        apply_coupon: Apply Coupon
+        entered_coupon: Coupon is applied!
+      order_summery:
+        order_summery: Order Summary
+        subtotal: 'Subtotal:'
+        coupon: 'Coupon:'
+        order_total: 'Order Total:'
+        checkout: Checkout

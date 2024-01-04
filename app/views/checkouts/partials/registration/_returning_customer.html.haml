@@ -1,0 +1,20 @@
+.col-md-5.mb-40
+  .text-center
+    %h3.general-subtitle 
+      = t('.returning_customer')
+    = link_to user_facebook_omniauth_authorize_path, method: :post, class: 'general-login-icon facebook' do
+      .fab.fa-facebook-square
+    %p.general-login-text 
+      = t('.or')
+  = simple_form_for(:user, url: session_path(:user), method: :post, html: { class: 'general-form' }) do |f|
+    .mb-40
+      %p.mb-15 
+        = t('.log_in')
+      = f.label :email, t('.email')
+      = f.input :email, required: true, autofocus: true, label: false, placeholder: t('.email'), input_html: { autocomplete: :on }
+      = f.label :password, t('.password')
+      = f.input :password, required: true, autofocus: true, label: false, placeholder: t('.password'), input_html: { autocomplete: :on }
+      = f.hidden_field :checkout_login, value: true
+      = f.hidden_field :order_id, value: @order.id
+      = link_to t('.forgot_password'), new_password_path(:user), class: 'help-block in-gold-500'
+    = f.button :submit, t('.log_in')

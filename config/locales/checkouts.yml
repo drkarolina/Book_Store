@@ -1,0 +1,79 @@
+en:
+  confirmation_letter: 'An order confirmation has been has been sent to %{email}'
+  price_in_euro_coupon: '-€%{price}'
+  delivery_days: '%{min_days} to %{max_days} days'
+  name: '%{first_name} %{last_name}'
+  city_address: '%{city} %{zip}'
+  phone: 'Phone %{phone}'
+  order_number: 'Order #%{number}'
+  checkouts:
+    partials:
+      registration:
+        returning_customer:
+          returning_customer: Returning Customer
+          or: Or
+          log_in: Log In with Password
+          email: Enter Email
+          password: Password
+          forgot_password: Forgot password?
+        new_customer:
+          new_customer: New Customer
+          or: Or
+          quick_register: Quik Register
+          quick_register_info: You’ll be able to create password later
+          email: Enter Email
+          coninue_checkout: Continue to Checkout
+      summary:
+        item_total: 'Item Total:'
+        order_total: 'Order Total:'
+        coupon: 'Coupon:'
+        shipping: 'Shipping:'
+      address:
+        billing_address: Billing Address
+        shipping_address: Shipping Address
+        fields_required: all fields are required
+        use_billing: Use Billing Address
+        save_and_continue: Save and Continue
+      delivery:
+        delivery: Delivery
+        save_and_continue: Save and Continue
+        deliveries:
+          deliveries:
+          method: Method
+          days: Days
+          price: Price
+          mobile:
+            method: Method
+            days: Days
+            price: Price
+      payment:
+        credit_card: Credit Card
+        credit_number: Card Number
+        name_on_card: Name on Card
+        mm_yy: MM / YY
+        cvv: CVV
+        save_and_continue: Save and Continue
+      confirmation:
+        place_order: Place Order
+        user_data:
+          billing_address: Billing Address
+          shipping_address: Shipping Address
+          shipments: Shipments
+          payment_information: Payment Information
+          edit: edit
+        books:
+          book: Book
+          price: Price
+          quantity: Quantity
+          total: Total
+        mobile:
+          books:
+            price: Price
+            quantity: Quantity
+            total: Total
+      complete:
+        thanks: Thank You for your Order!
+        back_to_store: Back to Store
+        address_and_order_info:
+
+

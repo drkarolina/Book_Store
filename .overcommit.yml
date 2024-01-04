@@ -1,0 +1,15 @@
+PreCommit: 
+  RuboCop: 
+    enabled: true 
+ 
+  Fasterer: 
+    enabled: true 
+ 
+  PreCommit: 
+    BundleAudit: 
+    enabled: true 
+ 
+  DatabaseConsistency: 
+    enabled: false 
+    quiet: false 
+    command: [ 'bundle', 'exec', 'database_consistency' ]
